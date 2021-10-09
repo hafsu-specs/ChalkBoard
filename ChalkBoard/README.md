@@ -28,3 +28,5 @@ which can instructors assign and grade (Image 4).
 Profile settings can also be changed, such as password and username (Image 2).
 Students may add or drop a course, and Instructors can add or delete courses, 
 add instructors to their courses, or remove themselves from a course (Image 7). --Hafsah Kamal
+
+This is suppose to be a paraghaph, just to practice --Rupakshi Aggarwal
