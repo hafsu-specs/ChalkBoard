@@ -1,22 +1,23 @@
-# ChalkBoard
+ChalkBoard
 https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/main/ChalkBoard/HTML
-##Images below were constructed using LucidChart. 
-####Contributers: Rupakshi Aggarwal and Hafsah Kamal
-###Image 1
+
+Images below were constructed using LucidChart. 
+Contributers: Rupakshi Aggarwal and Hafsah Kamal
+Image 1
 ![Site Map](Images/Site_map.jpeg)
-###Image 2
+Image 2
 ![NavBar and Profile Page](Images/Website_wireframe.jpeg)
-###Image 3
+Image 3
 ![Student/Instructor Sign Up](Images/Website_wireframe-2.jpeg)
-###Image 4
+Image 4
 ![Student/Instructor Views of Assignment+Lesson Pages](Images/Website_wireframe-3.jpeg)
-###Image 5
+Image 5
 ![Student Course Home Page](Images/Website_wireframe-4.jpeg)
-###Image 6
+Image 6
 ![Instructor Home Page and Instructor mode to Add and Delete Students, Instructors, or Courses](Images/Website_wireframe-5.jpeg)
-###Image 7
+Image 7
 ![Search page and courses page for Student and Instructor](Images/Website_wireframe-6.jpeg)
-###Image 8
+Image 8
 ![Responsive Width Display](Images/Different_screen_sizes.jpeg)
 These images display the site map (Image 1) and wireframe (Images 2-8) of our future distance-learning website "Chalkboard." 
 The purpose of our website is to allow both students and teachers to learn and teach virtually. 
@@ -30,4 +31,5 @@ Profile settings can also be changed, such as password and username (Image 2).
 Students may add or drop a course, and Instructors can add or delete courses, 
 add instructors to their courses, or remove themselves from a course (Image 7). --Hafsah Kamal
 
-This is suppose to be a paraghaph, just to practice --Rupakshi Aggarwal
+What we learned:
+"I specifically learned a lot about git due to Rupakshi. Some keywords include "git branch", "git checkout -b <name>", and in general "git status" to check the changes of my repositoies (in the origin and local repo). I also struggled in finding a way to edit HTML text for the "TeacherCreatingTest" page, because
