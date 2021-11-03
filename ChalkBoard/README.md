@@ -1,7 +1,7 @@
 # ChalkBoard
 https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/main/ChalkBoard/HTML
 
-## THe link above is for the HTML files required for our ChalkBoard site.
+## The link above directs users to the ChalkBoard HTML files.
 
 ### Images below were constructed using LucidChart. 
 Contributers: Rupakshi Aggarwal and Hafsah Kamal
