@@ -32,4 +32,8 @@ Students may add or drop a course, and Instructors can add or delete courses,
 add instructors to their courses, or remove themselves from a course (Image 7). --Hafsah Kamal
 
 ###### What we learned:
-"I specifically learned a lot about git due to Rupakshi. Some keywords include "git branch", "git checkout -b <name>", and in general "git status" to check the changes of my repositoies (in the origin and local repo). I also struggled in finding a way to edit HTML text for the "TeacherCreatingTest" page, because
+11/02-03/2021
+"I specifically learned a lot about git due to Rupakshi. Some keywords include "git branch", "git checkout -b <name>", and in general "git status" to check the changes of my repositories (in the origin and local repo). I also struggled in finding a way to edit HTML text for the "TeacherCreatingTest" page, because I did not even realize text could be editable after being placed in the DOM tree, so that was cool, realizing that could be done with HTML.
+  Rupakshi and I also discussed using bootstrap to add our styles and make our webpages reponsive so we did so by copy-pasting our <head> tags, but I think we will just import our necessary stylesheets and scripts next time. "
+  
+  
