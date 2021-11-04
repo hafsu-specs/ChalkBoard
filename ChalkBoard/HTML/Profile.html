@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-    
+    <link rel="stylesheet" href="../Style.css">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <script id="replace_with_navbar" src="nav.js"></script>
+    <header>
+        <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="InstructorCourseHomePage.html">Instructor Home Page</a>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="InstructorCourseHomePage.html">Home</a> &nbsp;</li>
+              <li> <a href="Profile.html">Profile</a> &nbsp;</li>
+              <li><a href="InstructorCreatingTest.html">Creating Test</a></li>
+              <li><a href="InstructorGradingTest.html">Grading Test</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <div class="main">
+        <div class="container">
+        <h2 class="form-title">Profile</h2>
+        <div class="form-group">
+        <input type="text" class="form-input" name="name" id="name" value="Rupakshi Aggarwal">
+        </div>
+        <div class="form-group">
+        <input type="email" class="form-input" name="email" id="email" value="Rupakshiaggarwal1999@gmail.com">
+        </div>
+        <div class="form-group">
+        <input type="text" class="form-input" name="password" id="password" value="******">
+        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+        </div>
+        </div>
+        </div>
 </body>
 </html>
