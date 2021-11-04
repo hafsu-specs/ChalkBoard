@@ -24,7 +24,7 @@ Contributers: Rupakshi Aggarwal and Hafsah Kamal
 ![Search page and courses page for Student and Instructor](Images/Website_wireframe-6.jpeg)
 ### Image 8
 ![Responsive Width Display](Images/Different_screen_sizes.jpeg)
-## ## Website features:
+#### Website features:
 
 ## These images display the site map (Image 1) and wireframe (Images 2-8) of our future distance-learning website "Chalkboard." 
 The purpose of our website is to allow both students and teachers to learn and teach virtually. 
