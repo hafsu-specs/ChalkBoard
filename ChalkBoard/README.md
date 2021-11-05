@@ -14,6 +14,8 @@ https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/main/ChalkBoard/HT
 5. Instructor and student view opens with all the classes displayes in flex boxes
 6. To acess each class user can click on the class name
 7. If a student searches a class that they are not currently enrolled in, they will be able given an option to enroll in that class
+8. To enroll in a class they can just click on Enroll form by clicing on "Enroll" below class name
+9. An instructor can create or drop a course by clicking on specific options given on the header of instructor view
 
 
 
