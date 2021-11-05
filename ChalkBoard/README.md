@@ -1,6 +1,6 @@
 # ChalkBoard
 https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/main/ChalkBoard/HTML
-# The link above directs users to the ChalkBoard HTML files.
+### The link above directs users to the ChalkBoard HTML files.
 
 ## How to use the website
 1. Instructor and students can sign up using the sign up buttons on the first page
