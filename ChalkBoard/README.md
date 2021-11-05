@@ -1,5 +1,6 @@
 # ChalkBoard
 https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/main/ChalkBoard/HTML
+# The link above directs users to the ChalkBoard HTML files.
 
 ## How to use the website
 1. Instructor and students can sign up using the sign up buttons on the first page
@@ -13,7 +14,7 @@ https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/main/ChalkBoard/HT
 6. To acess each class user can click on the class name
 7. If a student searches a class that they are not currently enrolled in, they will be able given an option to enroll in that class
 
-## The link above directs users to the ChalkBoard HTML files.
+
 
 ## Team
 Rupakshi Aggarwal, Hafsah Kamal
