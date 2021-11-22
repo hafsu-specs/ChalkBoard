@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Student Courses Home Page</title>
+    <!-- <meta charset="UTF-8">
+     <title>Student Courses Home Page</title>
+     <link rel="stylesheet" href="../Style.css">-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Course Home Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../Style.css">
 </head>
-<style>
+<!--<style>
     .flex-container {
         display: flex;
         flex-wrap: wrap;
@@ -16,54 +28,64 @@
         margin: 10px;
         padding: 20px;
     }
-</style>
+</style>-->
 <body>
     <header>
-        <h1>Student Course Home Page</h1>
-        <nav>
-            <a href="">Home</a> &nbsp;
-            <a href="">Profile</a> &nbsp;
-            <a href="">Math</a>
-            <a href="">English</a>
+        <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../Index.html">Logout</a></li>
+                    <li><a href="StudentCoursesHomePage.html">My Courses</a></li>
+                    <li><a href="StudentTestTaking.html">My Tests</a></li>
+                    <li><a href="StudentProfile.html">Profile</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
+    <h1>Home</h1>
     <div class="flex-container">
         <div class="course1">
-            <h2> Geometry</h2>
-            <h3> Professor Jane Smith</h3>
-            <img src="image" alt="Picture of a Professor">
-             <ol>Assignments Due Today
-                 <li>Math 101 Lecture Reading</li>
-                 <li>Geometry Quiz</li>
-             </ol>
-            <ol>Assignments Due Soon
+            <a href="#"><h2>Mathematics</h2></a>
+            <h3>Professor Jane Smith</h3>
+            <img src="../assets/img/Geomatry.jpg" width= 100 alt="Picture of a Professor">
+            <p>Assignments Due Today</p>
+            <ol>
+                <li>Math 101 Lecture Reading</li>
+                <li>Geometry Quiz</li>
+            </ol>
+            <p>Assignments Due Soon</p>
+            <ol>
                 <li>Math 102 Lecture Reading</li>
                 <li>Geometry Exam</li>
             </ol>
         </div>
         <div class="course2">
-            <h2> Geology</h2>
+            <a href="#"><h2>Geology</h2></a>
             <h3> Professor Janet Smithson</h3>
-            <img src="image" alt="Picture of a Professor">
-            <ol>Assignments Due Today
+            <img src="../assets/img/Geology.jpg" width= 100 alt="Picture of a Professor">
+            <p>Assignments Due Today</p>
+            <ol>
                 <li>Geology Lab</li>
-                <li>Geometry Lesson</li>
+                <li>Geology Lesson</li>
             </ol>
-            <ol>Assignments Due Soon
+            <p>Assignments Due Soon</p>
+            <ol>
                 <li>Geology Quiz</li>
                 <li>Geology Essay</li>
             </ol>
         </div>
 
         <div class="course3">
-            <h2> Geography</h2>
+            <a href="#"><h2>Geography</h2></a>
             <h3> Professor Minni Max</h3>
-            <img src="image" alt="Picture of a Professor">
-            <ol>Assignments Due Today
+            <img src="../assets/img/Geography.jpg" width= 100 alt="Picture of a Professor">
+            <p>Assignments Due Today</p>
+            <ol>
                 <li>Geography 101 Lecture Reading</li>
                 <li>Geography Quiz</li>
             </ol>
-            <ol>Assignments Due Soon
+            <p>Assignments Due Soon</p>
+            <ol>
                 <li>Geography 102 Lecture Reading</li>
                 <li>Geography Exam</li>
             </ol>

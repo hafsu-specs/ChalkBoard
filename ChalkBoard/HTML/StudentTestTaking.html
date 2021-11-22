@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>Student Test View</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Test</title>
+    <link rel="stylesheet" href="../Style.css">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 <body>
 <header>
-    <h1>Student Test</h1>
-    <nav>
-        <a href="">Home</a> &nbsp;
-        <a href="">Profile</a> &nbsp;
-        <a href="">Math</a>
-        <a href="">English</a>
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="StudentCoursesHomePage.html">Chalk<b>Board</b></a>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="StudentCoursesHomePage.html">Course Home Page</a></li>
+                <li> <a href="StudentProfile.html">Profile</a> &nbsp;</li>
+                <li><a href="StudentTestTaking.html">Take Test</a></li>
+                <li><a href="StudentTestDraft.html">Drafts</a></li>
+                <li><a href="StudentTestResults.html">Test Results</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
@@ -17,7 +31,9 @@
     <h2>Geometry 101--Lesson 1</h2>
     <p> Read Chapter One “Circles” in the Geometry
         textbook and answer the following questions: </p>
-    <a class="questions"><p>Question 1<p>
+    <section class="questions">
+        <h3>Test</h3>
+        <p>Question 1<p>
         <p>How do you find the circumference of a circle?</p>
        <form action="/action_page.php">
            <p><label for="q1">Type Answer below:</label></p>
@@ -64,7 +80,7 @@
 
         <input type="submit">
         <input type="submit" name="save" value="Save as Draft">
-        </a>
+        </section>
 </main>
 <footer>
     <p>
