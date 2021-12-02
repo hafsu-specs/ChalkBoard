@@ -9,12 +9,12 @@ https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/main/ChalkBoard/HT
 3. How to login: 
          On larger screens: Click on the login button in the header, a dropdown will open, enter your username and password, and finally click on login to acess your courses
          On smaller screens: Click on the box with two lines at the top right to screen to access the login dropdown button
-4. Once loged in: at this stage there is no backend so we have to manually pick which view do we want to acess
+4. Once logged in: at this stage there is no backend so we have to manually pick which view do we want to acess
          There is an option to go back on the landing page, access instructor view, student view or admin view
-5. Instructor and student view opens with all the classes displayes in flex boxes
-6. To acess each class user can click on the class name
+5. Instructor and student view opens with all the classes displays in flex boxes
+6. To access each class user can click on the class name
 7. If a student searches a class that they are not currently enrolled in, they will be able given an option to enroll in that class
-8. To enroll in a class they can just click on Enroll form by clicing on "Enroll" below class name
+8. To enroll in a class they can just click on Enroll form by clicking on "Enroll" below class name
 9. An instructor can create or drop a course by clicking on specific options given on the header of instructor view
 
 
