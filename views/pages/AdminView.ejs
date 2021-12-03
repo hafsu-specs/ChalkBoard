@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="../../public/Style.css">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-default navbar-expand-lg navbar-light">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Landing Page</a>
+        <a class="navbar-brand" href="index">Log Out</a>
     </div>
 </nav>
     <div class="table-responsive text-nowrap">
@@ -31,30 +31,16 @@
         </tr>
       </thead>
       <tbody>
+      <% listnames.forEach(function(name) { %>
         <tr>
           <th scope="row">1</th>
-          <td>Abramov</td>
+          <td><%= name %></td>
           <td>Login</td>
           <td>Rupakshi</td>
           <td>Login</td>
           <td>True</td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        </tr>
+      <% }); %>
       </tbody>
     </table>
   
