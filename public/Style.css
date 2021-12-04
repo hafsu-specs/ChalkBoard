@@ -47,10 +47,15 @@ body {
 }
 
 .signup {
-    padding-top: 20vw;
-    padding: left 10vw;
+    padding-top: 8vw;
+    align-content: center;
+    padding-right: 8%;
+}
+.signup-content {
+    padding-left: 8%;
     align-content: center;
 }
+
 
 .navbar {
     background: #fff;

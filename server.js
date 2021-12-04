@@ -12,23 +12,28 @@ app.listen(8080);
 
 //tracks all activities
 var listnames=[];
+var i=0;
 // *** GET Routes - display pages ***
 // Root Route
 app.get('/', function (req, res) {
-    listnames[0] = ("Index page opened");
+    listnames[i] = ("Index page opened");
+    i++;
     res.render('pages/index');
 });
 app.get('/SignUp', function (req, res) {
-    listnames[1] = ("Signup opened");
+    listnames[i] = ("Signup opened");
+    i++;
     res.render('pages/SignUp');
 });
 
 app.get('/StudentHome', function (req, res) {
-    listnames[2]=("student logged in");
+    listnames[i]=("student logged in");
+    i++;
     res.render('pages/StudentCoursesHomePages');
 });
 app.get('/InstructorHome', function (req, res) {
-    listnames[3] = ("instructor logged in");
+    listnames[i] = ("instructor logged in our app");
+    i++;
     res.render('pages/InstructorCoursesHomePage');
 });
 // Route Route
