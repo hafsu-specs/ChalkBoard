@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link href="/Style.css" rel="stylesheet" type="text/css">
+<link href="/Style.css" rel="stylesheet" type="text/css">
 <script>
 	// Prevent dropdown menu from closing when click inside the form
 	$(document).on("click", ".navbar-right .dropdown-menu", function(e){
@@ -36,41 +36,16 @@
 		<ul class="nav navbar-nav">
 			<li><a href="/About">About</a></li>
 		</ul>
-		<ul class="nav navbar-nav navbar-right">			
-			<li>
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#">Login</a>
-				<ul class="dropdown-menu login-form">					
-					<li>
-						<form action="auth" method="POST"> <!-- this page tests the login and then leads to index.ejs page-->
-							<div class="form-group">
-								<label>Username</label>
-								<input type="text"  name="username" placeholder="Username" class="form-control" required="required">
-							</div>
-							<div class="form-group">
-								<div class="clearfix">
-									<label>Password</label>
-									<a href="#" class="pull-right text-muted"><small>Forgot?</small></a>
-								</div>
-								<input type="password" name="password" placeholder="Password" class="form-control" required="required">
-							</div>
-							<input type="submit" class="btn btn-primary btn-block" value="Login">
-						</form>
-					</li>
-				</ul>
-			</li>
-			
+		<ul class="nav navbar-nav navbar-right">
 		</ul>
 	</div>
 </nav>
 <!-- Masthead-->
-<header class="masthead">
+<header class="masthead" id="flex-container">
     <div class="container">
-        <div class="masthead-subheading">Welcome To ChalkBoard!</div>
-        <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-        <div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="/SignUp">Instructor Sign up</a>
-            <a class="btn btn-primary btn-xl text-uppercase" href="">Student Sign up</a>
-        </div>
+        <div class="masthead-subheading">Mange all your classes through this one platform</div>
+        <p>This is the school of opportunities and success</p>
+		<p>For any questions contact us</p>
         
     </div>
 </header>
