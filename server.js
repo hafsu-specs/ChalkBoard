@@ -60,6 +60,7 @@ app.post('/auth', function(request, response) {
                 }
                 else if(results[0].type=="admin"){
                     request.session.Adminloggedin = true;
+                    listnames[i++]=(request.session.username + ": Admin login successful");
                     response.redirect('/AdminView');
                 }
                 else {
@@ -205,7 +206,6 @@ app.get('/InstructorHome', function(request, response) {
 //which means that the admin logged in will appear every time we reload the admin page
 app.get('/AdminView', function(request, response) {
 	if (request.session.Adminloggedin) {
-         listnames[i++]=(request.session.username + ": Admin logged in");
          response.render('pages/AdminView', {
             // EJS variable and server-side variable
             listnames: listnames,
