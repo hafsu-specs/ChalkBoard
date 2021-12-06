@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign up here</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="Style.css" />
+  <meta name="robots" content="noindex, follow" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Chalk<b>Board</b></a>
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
+            <ul class="nav navbar-nav">
+                <li><a href="/About">About</a></li>
+            </ul>
+        </div>
+    </nav>
+  <div class="main">
+    <section class="signup">
+      <div class="container">
+        <div class="signup-content">
+          <form action="InstructorSignUp" method="POST" id="signup-form" class="signup-form">
+            <h2 class="form-title">Create account</h2>
+            <div class="form-group">
+              <input type="text" class="form-input" name="username" id="username" placeholder="Username" />
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" />
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" name="password" id="password" placeholder="Password" />
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-input" name="re_password" id="re_password"
+                placeholder="Repeat your password" />
+            </div>
+            <div class="form-group">
+              <input type="submit" name="submit" id="submit" class="form-submit btn btn-primary btn-xl text-uppercase"
+                value="Sign up" />
+            </div>
+          </form>
+          <p class="loginhere">
+            Have already an account ?
+            <a href="/" class="loginhere-link">Login here</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

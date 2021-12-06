@@ -41,15 +41,30 @@ var i=0;
 
 //When the client enters their details in the login form and clicks the submit button, the form data will be sent to the server
 // and with that data our login script will check in our MySQL accounts table to see if the details are correct
+//TODO: logout so two different sessions cannot be opened at once
 app.post('/auth', function(request, response) {
 	var username = request.body.username;
 	var password = request.body.password;
 	if (username && password) {
 		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
-			if (results.length > 0) {
-				request.session.loggedin = true;
+			//TODO: check if the logged in user is an instructor or student
+            if (results.length > 0) {
 				request.session.username = username;
-				response.redirect('/StudentHome');
+                if(results[0].type=="student"){
+                    request.session.studentloggedin = true;
+                    response.redirect('/StudentHome');
+                }
+                else if(results[0].type=="instructor"){
+                    request.session.instructorloggedin = true;
+                    response.redirect('/InstructorHome');
+                }
+                else if(results[0].type=="admin"){
+                    request.session.Adminloggedin = true;
+                    response.redirect('/AdminView');
+                }
+                else {
+                    response.send("Only users with student, instructor and Admin accounts are allowed to use this website");
+                }
 			} else {
                 //response.send("incorrect username/or password");
                 listnames[i]=("user redirected to home page: login failed");
@@ -64,22 +79,63 @@ app.post('/auth', function(request, response) {
 	}
 });
 
+//student Sign up only
+app.post('/StudentSignUp', function(request, response) {
+	var username = request.body.username;
+	var password = request.body.password;
+    var email = request.body.email;
+    var type = "student";
+	if (username && password && email) {
+		connection.query('INSERT INTO accounts (username, password, email, type) VALUES (?, ?, ?, ?)', [username, password, email, type], function(error, results, fields) {
+			//TODO: handle if the user already exists
+            listnames[i++]=("Student Signup successful!");
+            listnames[i++]=("Created a new user: "+username);
+			response.redirect('/');	
+			response.end();
+		});
+	} else {
+		response.send('User: '+user+" already exists: please login insted");
+		response.redirect('/');
+	}
+});
+
+//instructor signup only
+app.post('/InstructorSignUp', function(request, response) {
+	var username = request.body.username;
+	var password = request.body.password;
+    var email = request.body.email;
+    var type = "instructor";
+	if (username && password && email) {
+		connection.query('INSERT INTO accounts (username, password, email, type) VALUES (?, ?, ?, ?)', [username, password, email, type], function(error, results, fields) {
+			//TODO: handle if the user already exists
+            listnames[i++]=("Instructor Signup successful!");
+            listnames[i++]=("Created a new user: "+username);
+			response.redirect('/');	
+			response.end();
+		});
+	} else {
+		response.send('User: '+user+" already exists: please login insted");
+		response.redirect('/');
+	}
+});
+
 // *** GET Routes - display pages ***
 
 //landing page
 app.get('/', function (req, res) {
-    listnames[i] = ("Index page opened");
-    i++;
     res.render('pages/index');
 });
 
 //signup
-
-const users = []
-app.get('/SignUp', function (req, res) {
+app.get('/InstructorSignUp', function (req, res) {
     listnames[i] = ("Signup opened");
     i++;
-    res.render('pages/SignUp');
+    res.render('pages/InstructorSignUp');
+});
+app.get('/StudentSignUp', function (req, res) {
+    listnames[i] = ("Signup opened");
+    i++;
+    res.render('pages/StudentSignUp');
 });
 
 app.get('/temp', function (req, res) {
@@ -88,8 +144,9 @@ app.get('/temp', function (req, res) {
     res.render('pages/temp');
 });
 
+//only students can access this view
 app.get('/StudentProfile', function (request, response) {
-    if (request.session.loggedin) {
+    if (request.session.studentloggedin) {
         listnames[i]=(request.session.username + " student profile");
         i++;
         response.render('pages/StudentProfile');
@@ -114,9 +171,10 @@ app.get('/About', function (req, res) {
     res.render('pages/About');
 });
 
+//only students can access this page
 app.get('/StudentHome', function(request, response) {
-	if (request.session.loggedin) {
-         listnames[i]=(request.session.username + " student logged in");
+	if (request.session.studentloggedin) {
+         listnames[i]=(request.session.username + ": student logged in");
          i++;
          response.render('pages/StudentCoursesHomePage');
         return;
@@ -128,16 +186,34 @@ app.get('/StudentHome', function(request, response) {
 	response.end();
 });
 
-app.get('/InstructorHome', function (req, res) {
-    listnames[i] = ("instructor logged in our app");
-    i++;
-    res.render('pages/InstructorCoursesHomePage');
+//only instructors can access this page
+app.get('/InstructorHome', function(request, response) {
+	if (request.session.instructorloggedin) {
+         listnames[i]=(request.session.username + ": Instructor logged in");
+         i++;
+         response.render('pages/InstructorCoursesHomePage');
+        return;
+	} else {
+         listnames[i]=("instructor access denied: please login");
+         i++;
+         response.redirect('/');
+	}
+	response.end();
 });
-// Route Route
-app.get('/AdminView', function (req, res) {
-    // Render index page
-    res.render('pages/AdminView', {
-        // EJS variable and server-side variable
-        listnames: listnames
-    });
+
+//TODO: think how to fix - everytime a new activity happens we have to reload the admin page 
+//which means that the admin logged in will appear every time we reload the admin page
+app.get('/AdminView', function(request, response) {
+	if (request.session.Adminloggedin) {
+         listnames[i++]=(request.session.username + ": Admin logged in");
+         response.render('pages/AdminView', {
+            // EJS variable and server-side variable
+            listnames: listnames
+        });
+        return;
+	} else {
+         listnames[i++]=("Admin access denied: please login");
+         response.redirect('/');
+	}
+	response.end();
 });
