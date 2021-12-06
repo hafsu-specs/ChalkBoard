@@ -19,16 +19,27 @@
 
 <body>
 <header>
-
-    <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-default navbar-expand-lg navbar-light">
         <div class="navbar-header">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="index">Logout</a></li>
-            <li><a href="InstructorCoursesHomePage.ejs">All Courses</a></li>
-            <li><a href="/pages/Profile.html">Profile</a></li>
-          </ul>
+            <a class="navbar-brand" href="/">Chalk<b>Board</b></a>
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="navbar-toggler-icon"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-      </nav>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
+        <ul class="nav navbar-nav">
+            <li><a href="InstructorCoursesHomePage.ejs">All Courses</a></li>
+            <li><a href="/pages/CreateCourse.html">Create course</a></li>
+            <li><a href="/pages/DropCourse.html">Drop course</a></li>
+            <li><a href="/pages/Profile.html">Profile</a></li>
+            <li><a href="/">Logout</a></li>
+        </ul>
+    </div>
+</nav>
 </header>
 <div class="container">
     <div class="row height d-flex justify-content-center align-items-center">
@@ -42,59 +53,55 @@
     </div>
 </div>
 <script src="../../js/Search.js"></script>
-<div class="flex-container">
-    <div class="course1">
-        <h3>Professor Janet Smithson</h3>
-        <div class="container">
-            <img src="/assets/img/Geomatry.jpg" width=450 alt="Picture of a Professor" />
-           <h4>Geometry</h4>
+<h1>Home</h1>
+    <div class="flex-container">
+        <div class="course1">
+            <a href="/pages/GeometryCourse.html"><h2>Mathematics</h2></a>
+            <h3>Professor Jane Smith</h3>
+            <img src="/assets/img/Geomatry.jpg" width= 100 alt="Picture of a Professor">
             <p>Assignments Due Today</p>
             <ol>
-                <li>Geo 101 Lecture Reading</li>
-                <li>Geo Quiz</li>
+                <li>Math 101 Lecture Reading</li>
+                <li>Math 101 Lecture Reading</li>
+                <li>Geometry Quiz</li>
             </ol>
             <p>Assignments Due Soon</p>
             <ol>
-                <li>Geo 102 Lecture Reading</li>
-                <li>Geo Exam</li>
+                <li>Math 102 Lecture Reading</li>
+                <li>Geometry Exam</li>
             </ol>
         </div>
-    </div>
-    <div class="course2">
-        <h3>Professor Janet Smithson</h3>
-        <div class="container">
-            <img src="/assets/img/Geology.jpg" width=450 alt="Picture of a Professor" />
-            <h4>Geology</h4>
+        <div class="course2">
+            <a href="/pages/GeologyCourse.html"><h2>Geology</h2></a>
+            <h3> Professor Janet Smithson</h3>
+            <img src="/assets/img/Geology.jpg" width= 100 alt="Picture of a Professor">
             <p>Assignments Due Today</p>
             <ol>
-                <li>Geo 101 Lecture Reading</li>
-                <li>Geo Quiz</li>
+                <li>Geology Lab</li>
+                <li>Geology Lesson</li>
             </ol>
             <p>Assignments Due Soon</p>
             <ol>
-                <li>Geo 102 Lecture Reading</li>
-                <li>Geo Exam</li>
+                <li>Geology Quiz</li>
+                <li>Geology Essay</li>
             </ol>
         </div>
-    </div>
 
-    <div class="course3">
-        <h3>Professor Janet Smithson</h3>
-        <div class="container">
-            <img src="/assets/img/Geography.jpg" width=450 alt="Picture of a Professor" />
-           <h4>Geography</h4>
+        <div class="course3">
+            <a href="/pages/GeographyCourse.html"><h2>Geography</h2></a>
+            <h3> Professor Minni Max</h3>
+            <img src="/assets/img/Geography.jpg" width= 100 alt="Picture of a Professor">
             <p>Assignments Due Today</p>
             <ol>
-                <li>Geo 101 Lecture Reading</li>
-                <li>Geo Quiz</li>
+                <li>Geography 101 Lecture Reading</li>
+                <li>Geography Quiz</li>
             </ol>
             <p>Assignments Due Soon</p>
             <ol>
-                <li>Geo 102 Lecture Reading</li>
-                <li>Geo Exam</li>
+                <li>Geography 102 Lecture Reading</li>
+                <li>Geography Exam</li>
             </ol>
         </div>
     </div>
-</div>
 </body>
 </html>

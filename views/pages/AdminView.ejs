@@ -13,33 +13,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-default navbar-expand-lg navbar-light">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index">Log Out</a>
+      <a class="navbar-brand" href="/">Chalk<b>Board</b></a>
+      <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+        <span class="navbar-toggler-icon"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-</nav>
+  <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
+      <ul class="nav navbar-nav">
+        <a class="navbar-brand" href="/">Log Out</a>
+      </ul>
+    </div>
+  </nav>
     <div class="table-responsive text-nowrap">
 
     <table class="table .w-auto">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Instructor</th>
           <th scope="col">Database call</th>
-          <th scope="col">Student</th>
-          <th scope="col">Database call</th>
-          <th scope="col">Successfull</th>
         </tr>
       </thead>
       <tbody>
       <% listnames.forEach(function(name) { %>
         <tr>
-          <th scope="row">1</th>
+          <th scope="row"><%= i%></th>
           <td><%= name %></td>
-          <td>Login</td>
-          <td>Rupakshi</td>
-          <td>Login</td>
-          <td>True</td>
         </tr>
       <% }); %>
       </tbody>

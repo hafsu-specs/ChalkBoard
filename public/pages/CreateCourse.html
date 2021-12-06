@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="UTF-8">
+     <title>Student Courses Home Page</title>
+     <link rel="stylesheet" href="../Style.css">-->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instructor Courses Home Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../Style.css" />
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Chalk<b>Board</b></a>
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
+            <ul class="nav navbar-nav">
+                <li><a href="/InstructorHome">All Courses</a></li>
+                <li><a href="CreateCourse.html">Create course</a></li>
+                <li><a href="DropCourse.html">Drop course</a></li>
+                <li><a href="Profile.html">Profile</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <div class="main">
+        <div class="container">
+            <h2 class="form-title">Create a course</h2>
+            <form target="_blank" action="../InstructorCoursesHomePage.html" method="post">
+                <div class="form-group">
+                    <label>Course Name</label>
+                    <input type="text" class="form-control" required="required" />
+                </div>
+                <div class="form-group">
+                    <label>Semester</label>
+                    <input type="text" class="form-control" required="required" />
+                </div>
+                <div class="form-group">
+                    <div class="clearfix">
+                        <label>Course Password</label>
+                    </div>
+                    <input type="password" class="form-control" required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="submit" id="submit"
+                        class="form-submit btn btn-primary btn-xl text-uppercase" value="Create" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

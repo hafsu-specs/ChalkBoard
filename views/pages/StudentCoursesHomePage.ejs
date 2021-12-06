@@ -33,21 +33,29 @@
     <header>
         <nav class="navbar navbar-default navbar-expand-lg navbar-light">
             <div class="navbar-header">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Logout</a></li>
-                    <li><a href="/StudentHome">My Courses</a></li>
-                    <li><a href="pages/StudentTestTaking.html">My Tests</a></li>
-                    <li><a href="/StudentProfile">Profile</a></li>
-                </ul>
+                <a class="navbar-brand" href="/">Chalk<b>Board</b></a>
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-        </nav>
-        </nav>
-        </nav>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
+            <ul class="nav navbar-nav">
+                <li><a href="/StudentHome">My Courses</a></li>
+                <li><a href="pages/StudentTestTaking.html">My Tests</a></li>
+                <li><a href="/StudentProfile">Profile</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
     </header>
     <h1>Home</h1>
     <div class="flex-container">
         <div class="course1">
-            <a href="#"><h2>Mathematics</h2></a>
+            <a href="/pages/GeometryCourse.html"><h2>Mathematics</h2></a>
             <h3>Professor Jane Smith</h3>
             <img src="/assets/img/Geomatry.jpg" width= 100 alt="Picture of a Professor">
             <p>Assignments Due Today</p>
@@ -63,7 +71,7 @@
             </ol>
         </div>
         <div class="course2">
-            <a href="#"><h2>Geology</h2></a>
+            <a href="/pages/GeologyCourse.html"><h2>Geology</h2></a>
             <h3> Professor Janet Smithson</h3>
             <img src="/assets/img/Geology.jpg" width= 100 alt="Picture of a Professor">
             <p>Assignments Due Today</p>
@@ -79,7 +87,7 @@
         </div>
 
         <div class="course3">
-            <a href="#"><h2>Geography</h2></a>
+            <a href="/pages/GeographyCourse.html"><h2>Geography</h2></a>
             <h3> Professor Minni Max</h3>
             <img src="/assets/img/Geography.jpg" width= 100 alt="Picture of a Professor">
             <p>Assignments Due Today</p>
