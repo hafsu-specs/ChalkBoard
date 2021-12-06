@@ -1,5 +1,5 @@
 # ChalkBoard
-https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/main/ChalkBoard/HTML
+https://demo-chalkboard.hafsahkamal.repl.co
 
 ## The link above directs users to the ChalkBoard HTML files.
 
