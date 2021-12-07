@@ -9,7 +9,7 @@ Rupakshi Aggarwal, Hafsah Kamal
 ### Images below were constructed using LucidChart. 
 Contributers: Rupakshi Aggarwal and Hafsah Kamal
 ### Image 1
-![Site Map](Images/Site_map.jpeg)
+![Site Map](public/Images/Site_map.jpeg)
 ### Image 2
 ![NavBar and Profile Page](Images/Website_wireframe.jpeg)
 ### Image 3
