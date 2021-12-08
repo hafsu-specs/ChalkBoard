@@ -21,20 +21,31 @@
 <header>
   <nav class="navbar navbar-default navbar-expand-lg navbar-light">
     <div class="navbar-header">
-      <a class="navbar-brand" href="../../views/pages/InstructorCoursesHomePage.ejs">All Courses</a>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../../views/pages/InstructorCoursesHomePage.ejs">Course Home Page</a></li>
-        <li> <a href="Profile.html">Profile</a></li>
+        <a class="navbar-brand" href="/">Chalk<b>Board</b></a>
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="navbar-toggler-icon"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+<!-- Collection of nav links, forms, and other content for toggling -->
+<div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
+    <ul class="nav navbar-nav">
+        <li><a href="/InstructorHome">All Courses</a></li>
+        <li><a href="/GeologyCourse.html">Geology</a></li>
         <li><a href="InstructorCreatingTest.html">Creating Test</a></li>
         <li><a href="InstructorGradingTest.html">Grading Test</a></li>
-      </ul>
-    </div>
-  </nav>
+        <li><a href="Profile.html">Profile</a></li>
+        <li><a href="/">Logout</a></li>
+    </ul>
+</div>
+</nav>
 </header>
 <div class="">
   <h3>Professor Janet Smithson</h3>
   <div class="container">
-    <img src="../assets/img/Geology.jpg" width=750 alt="Picture of a Professor" />
+    <img src="../assets/img/Geology.jpg" width=400vw alt="Picture of a Professor" />
     <p>Assignments Due Today</p>
     <ol>
       <li>Geo 101 Lecture Reading</li>

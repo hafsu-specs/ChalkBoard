@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="/Style.css">
   </head>
 <body>
     <header>
@@ -32,9 +32,9 @@
     <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
         <ul class="nav navbar-nav">
             <li><a href="/InstructorHome">All Courses</a></li>
-            <li><a href="CreateCourse.html">Create course</a></li>
-            <li><a href="DropCourse.html">Drop course</a></li>
-            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="/pages/CreateCourse.html">Create course</a></li>
+            <li><a href="/pages/DropCourse.html">Drop course</a></li>
+            <li><a href="/InstructorProfile">Profile</a></li>
             <li><a href="/">Logout</a></li>
         </ul>
     </div>
@@ -44,7 +44,7 @@
         <div class="container">
         <h2 class="form-title">Profile</h2>
         <div class="form-group">
-        <input type="text" class="form-input" name="name" id="name" value="Rupakshi Aggarwal">
+        <input type="text" class="form-input" name="name" id="name" value=<%= username %>>
         </div>
         <div class="form-group">
         <input type="email" class="form-input" name="email" id="email" value="Rupakshiaggarwal1999@gmail.com">

@@ -110,7 +110,7 @@ app.post('/InstructorSignUp', function(request, response) {
 		connection.query('INSERT INTO accounts (username, password, email, type) VALUES (?, ?, ?, ?)', [username, password, email, type], function(error, results, fields) {
 			//TODO: handle if the user already exists
             listnames[i++]=("Instructor Signup successful!");
-            listnames[i++]=("Created a new user: "+username);
+            listnames[i++]=("Created a new user: With username: "+username + "|  Email: "+ email);
 			response.redirect('/');	
 			response.end();
 		});
@@ -129,12 +129,12 @@ app.get('/', function (req, res) {
 
 //signup
 app.get('/InstructorSignUp', function (req, res) {
-    listnames[i] = ("Signup opened");
+    listnames[i] = ("Instructor Signup opened");
     i++;
     res.render('pages/InstructorSignUp');
 });
 app.get('/StudentSignUp', function (req, res) {
-    listnames[i] = ("Signup opened");
+    listnames[i] = ("Student Signup opened");
     i++;
     res.render('pages/StudentSignUp');
 });
@@ -148,9 +148,11 @@ app.get('/temp', function (req, res) {
 //only students can access this view
 app.get('/StudentProfile', function (request, response) {
     if (request.session.studentloggedin) {
-        listnames[i]=(request.session.username + " student profile");
+        listnames[i]=(request.session.username + ": student profile");
         i++;
-        response.render('pages/StudentProfile');
+        response.render('pages/StudentProfile', {
+            username: request.session.username
+        });
        return;
    } else {
         listnames[i]=("student access denied: please login");
@@ -200,6 +202,22 @@ app.get('/InstructorHome', function(request, response) {
          response.redirect('/');
 	}
 	response.end();
+});
+
+app.get('/InstructorProfile', function (request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=(request.session.username + ": Instructor profile");
+        i++;
+        response.render('pages/Profile', {
+            username: request.session.username
+        });
+       return;
+   } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+   }
+   response.end();
 });
 
 //TODO: think how to fix - everytime a new activity happens we have to reload the admin page 
