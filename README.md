@@ -48,7 +48,6 @@ Clicking on a course from the courses/home page opens the course page (https://r
 ##### CSS In Our Website:
 Seeing as frameworks such as Bootstrap is permissible to use in our project, we decided to implement Bootstrap early on in our project in order to streamline the process. Our CSS file can be located in our file called "style.css," located in the ChalkBoard directory. We've checked for responsiveness as well as make sure no content is hidden from users.  
 #### What we learned:
-11/02-03/2021
 "I specifically learned a lot about git due to Rupakshi. Some keywords include "git branch", "git checkout -b <name>", and in general "git status" to check the changes of my repositories (in the origin and local repo). I also struggled in finding a way to edit HTML text for the "TeacherCreatingTest" page, because I did not even realize text could be editable after being placed in the DOM tree, so that was fascinating, realizing that text could be manipulated using basic HTML.
   Rupakshi and I also discussed using Bootstrap to add our styles and make our webpages reponsive so we did so by copy-pasting our <head> tags in each of our HTML files, but I think we will just import our necessary stylesheets and scripts next time.
   One thing I've also learned is that we have a long way to go. Just these few pages took more than 6-8 hours for me, so I know we need to put in our utmost effort to create an end result that we are proud to display."
