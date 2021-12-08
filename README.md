@@ -70,7 +70,8 @@ Our project now incorporates a server.js file, located in https://github.com/haf
  ###### Backend/Database:
   Rupakshi has connected her database to the server. (MySQL). It contains information on Users, complete with ids, usernames, first and last name, and passwords. In addition to this, it has been made to recognize unique usernames only.
  User metadata: All of the information featured on the database is available to the Admin (password provided in private comment for Deliverable 3). Please note that the information is visible only after admin has logged in and waits for a few seconds, as it has been programmed to autorefresh after several seconds.
-###### User signup/Sign in: Students and Instructors can signup through https://demo-chalkboard.hafsahkamal.repl.co/StudentSignUp and https://demo-chalkboard.hafsahkamal.repl.co/InstructorSignUp respectively. After creating an account, users may login through the login button located in the main page (https://demo-chalkboard.hafsahkamal.repl.co/). 
+###### User signup/Sign in:
+  Students and Instructors can signup through https://demo-chalkboard.hafsahkamal.repl.co/StudentSignUp and https://demo-chalkboard.hafsahkamal.repl.co/InstructorSignUp respectively. After creating an account, users may login through the login button located in the main page (https://demo-chalkboard.hafsahkamal.repl.co/). 
  ###### User Session:
  Users can access their courses only if they are logged in. A student cannot enter an instructor page without proper credentials nor vice versa. Finally, Admin can see all of this information (login attempts and failures) but must also be logged in to see this data. If user credentials are incorrect, do not exist, or are attempted to be used again (i.e. user tries to sign up using the same email but with a different password), users are redirected to the homepage, with Admin View detailing the failure.
  
