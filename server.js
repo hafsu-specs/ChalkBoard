@@ -177,7 +177,7 @@ app.get('/About', function (req, res) {
 //only students can access this page
 app.get('/StudentHome', function(request, response) {
 	if (request.session.studentloggedin) {
-         listnames[i]=(request.session.username + ": student logged in");
+         listnames[i]=("Username:"+ request.session.username + "| student logged in");
          i++;
          response.render('pages/StudentCoursesHomePage');
         return;
@@ -192,7 +192,7 @@ app.get('/StudentHome', function(request, response) {
 //only instructors can access this page
 app.get('/InstructorHome', function(request, response) {
 	if (request.session.instructorloggedin) {
-         listnames[i]=(request.session.username + ": Instructor logged in");
+         listnames[i]=("Username:"+ request.session.username + "| Instructor logged in");
          i++;
          response.render('pages/InstructorCoursesHomePage');
         return;
@@ -206,7 +206,7 @@ app.get('/InstructorHome', function(request, response) {
 
 app.get('/InstructorProfile', function (request, response) {
     if (request.session.instructorloggedin) {
-        listnames[i]=(request.session.username + ": Instructor profile");
+        listnames[i]=("Username:"+ request.session.username + "| Instructor profile");
         i++;
         response.render('pages/Profile', {
             username: request.session.username
