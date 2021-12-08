@@ -65,4 +65,14 @@ As of 11/22/2021, our website contains code which confirms to the guidelines adh
  These changes cannot be seen in the main branch just yet, but can be looked at via https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/Hafsah_CB/ChalkBoard.
   
 #### New Updates (Deliverable 3)
+As of December 7 2021, our website is live at https://demo-chalkboard.hafsahkamal.repl.co/.
+Our project now incorporates a server.js file, located in https://github.com/hafsu-specs/ChalkBoard/blob/main/server.js. We now also have new directories set up for different views. The public folder features images and assets, while views/pages contains all the ejs files for this project.
+ ###### Backend/Database:
+  Rupakshi has connected her database to the server. (MySQL). It contains information on Users, complete with ids, usernames, first and last name, and passwords. In addition to this, it has been made to recognize unique usernames only.
+ User metadata: All of the information featured on the database is available to the Admin (password provided in private comment for Deliverable 3). Please note that the information is visible only after admin has logged in and waits for a few seconds, as it has been programmed to autorefresh after several seconds.
+###### User signup/Sign in: Students and Instructors can signup through https://demo-chalkboard.hafsahkamal.repl.co/StudentSignUp and https://demo-chalkboard.hafsahkamal.repl.co/InstructorSignUp respectively. After creating an account, users may login through the login button located in the main page (https://demo-chalkboard.hafsahkamal.repl.co/). 
+ ###### User Session:
+ Users can access their courses only if they are logged in. A student cannot enter an instructor page without proper credentials nor vice versa. Finally, Admin can see all of this information (login attempts and failures) but must also be logged in to see this data. If user credentials are incorrect, do not exist, or are attempted to be used again (i.e. user tries to sign up using the same email but with a different password), users are redirected to the homepage, with Admin View detailing the failure.
+ 
+
 
