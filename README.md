@@ -38,7 +38,7 @@ Profile settings can also be changed, such as password and username (Image 2).
 Students may add or drop a course, and Instructors can add or delete courses, 
 add instructors to their courses, or remove themselves from a course (Image 7). --Hafsah Kamal
 
-#### Features of ChalkBoard
+#### Features of ChalkBoard (as of 3 November 2021))
 ChalkBoard consists of different webpages to allow a seamless online learning experience. As of now, it contains:
 A login page: (https://rupakshi1999.github.io/cs355-agru2717.github.io/index.html) in which users have the option of accessing their student/instructor account through the login button, or signing up (https://rupakshi1999.github.io/cs355-agru2717.github.io/HTML/SignUp.html).
 A landing page: (https://rupakshi1999.github.io/cs355-agru2717.github.io/HTML/Index.html?submit=Login) which is used to connect all pages (student, instructor and admin view) together temporarily. This page can be accessed by clicking "login" in from the index.html.
@@ -63,3 +63,6 @@ Seeing as frameworks such as Bootstrap is permissible to use in our project, we 
 As of 11/22/2021, our website contains code which confirms to the guidelines adhered by https://validator.w3.org/. We have removed <style> tags from our main HTML and moved our CSS files to a new directory altogether.
   Our nav bars, which had "#" as filler code previously, are now fully functional in all pages, with care taken to make sure pages the instructor may see, the students cannot access. In addition to this, we had images which had not matched the subject being taught; this has now been resolved. New html pages have been added to reflect the courses being taught (for now). RWD has also been reflected in our inclusion of the Bootstrap framework.
  These changes cannot be seen in the main branch just yet, but can be looked at via https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/Hafsah_CB/ChalkBoard.
+  
+#### New Updates (Deliverable 3)
+
