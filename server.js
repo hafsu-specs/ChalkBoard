@@ -212,6 +212,46 @@ app.get('/StudentHome', function(request, response) {
 	response.end();
 });
 
+//only students should have access to the following pages
+app.get('/GeometryCourse', function(request, response) {
+    if (request.session.studentloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | student opened Geometry Course");
+        i++;
+        response.render('pages/GeometryCourse');
+        return;
+    } else {
+        listnames[i]=("student access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/GeologyCourse', function(request, response) {
+    if (request.session.studentloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | student opened Geology Course");
+        i++;
+        response.render('pages/GeologyCourse');
+        return;
+    } else {
+        listnames[i]=("student access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/GeographyCourse', function(request, response) {
+    if (request.session.studentloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | student opened Geography Course");
+        i++;
+        response.render('pages/GeographyCourse');
+        return;
+    } else {
+        listnames[i]=("student access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
 //only instructors can access this page
 app.get('/InstructorHome', function(request, response) {
 	if (request.session.instructorloggedin) {
@@ -242,8 +282,47 @@ app.get('/InstructorProfile', function (request, response) {
    }
    response.end();
 });
-
-//TODO: think how to fix - everytime a new activity happens we have to reload the admin page 
+//only Instructors should have access to the following pages
+app.get('/InstructorGeography', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geography Course");
+        i++;
+        response.render('pages/GeographyCourse');
+        return;
+    } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/InstructorGeology', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geology Course");
+        i++;
+        response.render('pages/GeologyCourse');
+        return;
+    } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/InstructorGeometry', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geometry Course");
+        i++;
+        response.render('pages/InstructorGeometry');
+        return;
+    } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+//TODO: think how to fix - everytime a new activity happens we have to reload the admin page
 //which means that the admin logged in will appear every time we reload the admin page
 app.get('/AdminView', function(request, response) {
     connection.query("SELECT * FROM accounts", function (err, result, fields) {

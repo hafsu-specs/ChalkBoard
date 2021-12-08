@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../Style.css">
+  <link rel="stylesheet" href="../../public/Style.css">
 </head>
 
 <body>
@@ -32,26 +32,26 @@
 <!-- Collection of nav links, forms, and other content for toggling -->
 <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
     <ul class="nav navbar-nav">
-        <li><a href="/InstructorHome">All Courses</a></li>
-        <li><a href="/GeographyCourse.html">Geography</a></li>
-        <li><a href="InstructorCreatingTest.html">Creating Test</a></li>
-        <li><a href="InstructorGradingTest.html">Grading Test</a></li>
-        <li><a href="/InstructorProfile">Profile</a></li>
-        <li><a href="/">Logout</a></li>
+        <li><a href="/StudentHome">All Courses</a></li>
+        <li><a href="/GeologyCourse">Geology</a></li>
+        <li><a href="/Profile">Profile</a></li>
+        <form action="studentlogout" method="POST"> <!-- this page tests the login and then leads to index.ejs page-->
+            <input type="submit" class="btn btn-block" value="Logout">
+        </form>
     </ul>
 </div>
 </nav>
 </header>
 <div class="">
-  <h3>Professor Jane Smith</h3>
+  <h3>Professor Janet Smithson</h3>
   <div class="container">
-    <img src="../assets/img/Geography.jpg" width=400vw alt="Picture of a Professor" />
+    <img src="../../public/assets/img/Geology.jpg" width=400vw alt="Picture of a Professor" />
     <p>Assignments Due Today</p>
     <ol>
       <li>Geo 101 Lecture Reading</li>
       <li>Geo Quiz</li>
-      </ol>
-      <p>Assignments Due Soon</p>
+    </ol>
+    <p>Assignments Due Soon</p>
     <ol>
       <li>Geo 102 Lecture Reading</li>
       <li>Geo Exam</li>
