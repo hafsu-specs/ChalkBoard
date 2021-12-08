@@ -100,6 +100,26 @@ app.post('/StudentSignUp', function(request, response) {
 	}
 });
 
+//student Logout
+app.post('/studentlogout', function(request, response) {
+    request.session.studentloggedin = false;
+    response.redirect('/');	
+});
+
+//instcutor Logout
+app.post('/instructorlogout', function(request, response) {
+    request.session.instructorloggedin = false;
+    response.redirect('/');	
+});
+
+//admin logout
+app.post('/adminlogout', function(request, response) {
+    request.session.Adminloggedin = false;
+    response.redirect('/');	
+});
+
+
+
 //instructor signup only
 app.post('/InstructorSignUp', function(request, response) {
 	var username = request.body.username;
