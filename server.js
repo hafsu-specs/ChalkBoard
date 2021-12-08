@@ -38,18 +38,19 @@ app.use(bodyParser.json());
 //tracks all activities
 var listnames=[];
 var i=0;
+var metadata = []
 
 //When the client enters their details in the login form and clicks the submit button, the form data will be sent to the server
 // and with that data our login script will check in our MySQL accounts table to see if the details are correct
 //TODO: logout so two different sessions cannot be opened at once
 app.post('/auth', function(request, response) {
-	var username = request.body.username;
+	var username = request.body.email;
 	var password = request.body.password;
 	if (username && password) {
-		connection.query('SELECT * FROM accounts WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+		connection.query('SELECT * FROM accounts WHERE email = ? AND password = ?', [username, password], function(error, results, fields) {
 			//TODO: check if the logged in user is an instructor or student
             if (results.length > 0) {
-				request.session.username = username;
+				request.session.email = username;
                 if(results[0].type=="student"){
                     request.session.studentloggedin = true;
                     response.redirect('/StudentHome');
@@ -60,7 +61,7 @@ app.post('/auth', function(request, response) {
                 }
                 else if(results[0].type=="admin"){
                     request.session.Adminloggedin = true;
-                    listnames[i++]=(request.session.username + ": Admin login successful");
+                    listnames[i++]=(request.session.email + ": Admin login successful");
                     response.redirect('/AdminView');
                 }
                 else {
@@ -75,19 +76,20 @@ app.post('/auth', function(request, response) {
 			response.end();
 		});
 	} else {
-		response.send('Please enter Username and Password!');
+		response.send('Please enter a valid Username and Password!');
 		response.end();
 	}
 });
 
 //student Sign up only
 app.post('/StudentSignUp', function(request, response) {
-	var username = request.body.username;
+	var username = request.body.email;
 	var password = request.body.password;
-    var email = request.body.email;
+    var FirstName = request.body.FirstName;
+	var LastName = request.body.LastName;
     var type = "student";
-	if (username && password && email) {
-		connection.query('INSERT INTO accounts (username, password, email, type) VALUES (?, ?, ?, ?)', [username, password, email, type], function(error, results, fields) {
+	if (username && password && FirstName, LastName) {
+		connection.query('INSERT INTO accounts (password, email, FirstName, LastName, type) VALUES (?, ?, ?, ?, ?)', [password, username,FirstName, LastName, type], function(error, results, fields) {
 			//TODO: handle if the user already exists
             listnames[i++]=("Student Signup successful!");
             listnames[i++]=("Created a new user: "+username);
@@ -95,7 +97,7 @@ app.post('/StudentSignUp', function(request, response) {
 			response.end();
 		});
 	} else {
-		response.send('User: '+user+" already exists: please login insted");
+		response.send('User: '+username+" already exists: please login insted");
 		response.redirect('/');
 	}
 });
@@ -122,20 +124,21 @@ app.post('/adminlogout', function(request, response) {
 
 //instructor signup only
 app.post('/InstructorSignUp', function(request, response) {
-	var username = request.body.username;
+    var username = request.body.email;
 	var password = request.body.password;
-    var email = request.body.email;
+    var FirstName = request.body.FirstName;
+	var LastName = request.body.LastName;
     var type = "instructor";
-	if (username && password && email) {
-		connection.query('INSERT INTO accounts (username, password, email, type) VALUES (?, ?, ?, ?)', [username, password, email, type], function(error, results, fields) {
+	if (username && password && FirstName, LastName) {
+		connection.query('INSERT INTO accounts (password, email, FirstName, LastName, type) VALUES (?, ?, ?, ?, ?)', [password, username,FirstName, LastName, type], function(error, results, fields) {
 			//TODO: handle if the user already exists
             listnames[i++]=("Instructor Signup successful!");
-            listnames[i++]=("Created a new user: With username: "+username + "|  Email: "+ email);
+            listnames[i++]=("Created a new user: "+username);
 			response.redirect('/');	
 			response.end();
 		});
 	} else {
-		response.send('User: '+user+" already exists: please login insted");
+		response.send('User: '+username+" already exists: please login insted");
 		response.redirect('/');
 	}
 });
@@ -168,10 +171,10 @@ app.get('/temp', function (req, res) {
 //only students can access this view
 app.get('/StudentProfile', function (request, response) {
     if (request.session.studentloggedin) {
-        listnames[i]=(request.session.username + ": student profile");
+        listnames[i]=(request.session.email + ": student profile");
         i++;
         response.render('pages/StudentProfile', {
-            username: request.session.username
+            username: request.session.email
         });
        return;
    } else {
@@ -197,7 +200,7 @@ app.get('/About', function (req, res) {
 //only students can access this page
 app.get('/StudentHome', function(request, response) {
 	if (request.session.studentloggedin) {
-         listnames[i]=("Username:"+ request.session.username + "| student logged in");
+         listnames[i]=("Username:"+ request.session.email + " | student logged in");
          i++;
          response.render('pages/StudentCoursesHomePage');
         return;
@@ -212,7 +215,7 @@ app.get('/StudentHome', function(request, response) {
 //only instructors can access this page
 app.get('/InstructorHome', function(request, response) {
 	if (request.session.instructorloggedin) {
-         listnames[i]=("Username:"+ request.session.username + "| Instructor logged in");
+         listnames[i]=("Username:"+ request.session.email + " | Instructor logged in");
          i++;
          response.render('pages/InstructorCoursesHomePage');
         return;
@@ -243,9 +246,14 @@ app.get('/InstructorProfile', function (request, response) {
 //TODO: think how to fix - everytime a new activity happens we have to reload the admin page 
 //which means that the admin logged in will appear every time we reload the admin page
 app.get('/AdminView', function(request, response) {
+    connection.query("SELECT * FROM accounts", function (err, result, fields) {
+        if (err) throw err;
+        metadata = result
+    });
 	if (request.session.Adminloggedin) {
          response.render('pages/AdminView', {
             // EJS variable and server-side variable
+            metadata: metadata,
             listnames: listnames,
             i: "#"
         });
