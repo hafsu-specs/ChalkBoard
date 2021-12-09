@@ -2,33 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teacher Creating Test View</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Grading Test View</title>
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../Style.css">
+  <link href="/Style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
   <nav class="navbar navbar-default navbar-expand-lg navbar-light">
     <div class="navbar-header">
-      <a class="navbar-brand" href="../../views/pages/InstructorCoursesHomePage.ejs">All Courses</a>
+      <a class="navbar-brand" href="InstructorCoursesHomePage.ejs">All Courses</a>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../../views/pages/InstructorCoursesHomePage.ejs">Course Home Page</a></li>
+        <li><a href="/InstructorHome">Course Home Page</a></li>
         <li><a href="/InstructorProfile">Profile</a></li>
-        <li><a href="InstructorCreatingTest.html">Creating Test</a></li>
-        <li><a href="InstructorGradingTest.html">Grading Test</a></li>
+        <li><a href="/InstructorCreatingTest">Creating Test</a></li>
+        <li><a href="/InstructorGradingTest">Grading Test</a></li>
       </ul>
     </div>
   </nav>
 </header>
-
+<section class = "tests">
 <main>
-  <h2>Geometry 101--Lesson 1</h2>
+  <h2 class = "title">Geometry 101--Lesson 1</h2>
   <p> Read Chapter One “Circles” in the Geometry
     textbook and answer the following questions: </p>
   <section class="questions">
@@ -82,6 +82,7 @@
     <input type="submit" name="save" value="Save as Draft">
   </section>
 </main>
+</section>
 <footer>
   <p>
     &copy; 2021 Rupakshi and Hafsah's Online Classroom

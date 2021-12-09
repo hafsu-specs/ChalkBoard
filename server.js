@@ -111,7 +111,7 @@ app.post('/studentlogout', function(request, response) {
 //instcutor Logout
 app.post('/instructorlogout', function(request, response) {
     request.session.instructorloggedin = false;
-    response.redirect('/');	
+    response.redirect('/');
 });
 
 //admin logout
@@ -171,9 +171,9 @@ app.get('/temp', function (req, res) {
 //only students can access this view
 app.get('/StudentProfile', function (request, response) {
     if (request.session.studentloggedin) {
-        listnames[i]=(request.session.email + ": student profile");
+        listnames[i]=(request.session.email + ": opened student profile");
         i++;
-        response.render('pages/StudentProfile', {
+        response.render('pages/Profile', {
             username: request.session.email
         });
        return;
@@ -269,10 +269,10 @@ app.get('/InstructorHome', function(request, response) {
 
 app.get('/InstructorProfile', function (request, response) {
     if (request.session.instructorloggedin) {
-        listnames[i]=("Username:"+ request.session.username + "| Instructor profile");
+        listnames[i]=("Username:"+ request.session.email + "| Instructor profile");
         i++;
-        response.render('pages/Profile', {
-            username: request.session.username
+        response.render('pages/InstructorProfile', {
+            username: request.session.email
         });
        return;
    } else {
@@ -287,7 +287,7 @@ app.get('/InstructorGeography', function(request, response) {
     if (request.session.instructorloggedin) {
         listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geography Course");
         i++;
-        response.render('pages/GeographyCourse');
+        response.render('pages/InstructorGeography');
         return;
     } else {
         listnames[i]=("Instructor access denied: please login");
@@ -300,7 +300,7 @@ app.get('/InstructorGeology', function(request, response) {
     if (request.session.instructorloggedin) {
         listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geology Course");
         i++;
-        response.render('pages/GeologyCourse');
+        response.render('pages/InstructorGeology');
         return;
     } else {
         listnames[i]=("Instructor access denied: please login");
@@ -322,6 +322,132 @@ app.get('/InstructorGeometry', function(request, response) {
     }
     response.end();
 });
+app.get('/InstructorGeometry', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geometry Course");
+        i++;
+        response.render('pages/InstructorGeometry');
+        return;
+    } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+
+//the following requests are for htmls that we plan to turn into ejs
+//  this comment will be deleted once task is complete
+app.get('/CreateCourse', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Create Course");
+        i++;
+        response.render('pages/CreateCourse');
+        return;
+    } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/DropCourse', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Drop Course View");
+        i++;
+        response.render('pages/DropCourse');
+        return;
+    } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+
+app.get('/StudentEnrollment', function(request, response) {
+    if (request.session.studentloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Student Opened Enrollment Page");
+        i++;
+        response.render("pages/StudentEnrollment");
+        return;
+    } else {
+        listnames[i]=("Student access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+//For redirection to creating/grading tests from all geo courses:
+app.get('/InstructorCreatingTest', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Test Create Mode");
+        i++;
+        response.render("pages/InstructorCreatingTest");
+        return;
+    } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/InstructorGradingTest', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Test Grade Mode");
+        i++;
+        response.render("pages/InstructorGradingTest");
+        return;
+    } else {
+        listnames[i]=("Instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+//Student Test taking, drafts, and results redirection
+app.get('/StudentTestTaking', function(request, response) {
+    if (request.session.studentloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Student Opened Test Taking Page");
+        i++;
+        response.render("pages/StudentTestTaking");
+        return;
+    } else {
+        listnames[i]=("Student access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/StudentTestResults', function(request, response) {
+    if (request.session.studentloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Student Opened Test Results");
+        i++;
+        response.render("pages/StudentTestResults");
+        return;
+    } else {
+        listnames[i]=("Student access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/StudentTestDraft', function(request, response) {
+    if (request.session.studentloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Student Opened Test Draft");
+        i++;
+        response.render("pages/StudentTestDraft");
+        return;
+    } else {
+        listnames[i]=("Student access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+
+
+
 //TODO: think how to fix - everytime a new activity happens we have to reload the admin page
 //which means that the admin logged in will appear every time we reload the admin page
 app.get('/AdminView', function(request, response) {

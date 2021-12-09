@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../public/Style.css">
+    <link href="/Style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -33,19 +33,21 @@
     <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
         <ul class="nav navbar-nav">
             <li><a href="/StudentHome">All Courses</a></li>
-            <li><a href="/GeometryCourse">Geometry</a></li>
-            <li><a href="/Profile">Profile</a></li>
+            <li><a href="/StudentTestTaking">Geometry Test</a></li>
+            <li><a href="/StudentTestDraft">Geometry Test Drafts</a></li>
+            <li><a href="/StudentTestResults">Geometry Test Results</a></li>
+            <li><a href="/StudentProfile">Profile</a></li>
             <form action="studentlogout" method="POST"> <!-- this page tests the login and then leads to index.ejs page-->
                 <input type="submit" class="btn btn-block" value="Logout">
             </form>
         </ul>
     </div>
-    </nav>>
+    </nav>
 </header>
-<div class="">
-    <h3>Professor Jane Smith</h3>
+<div class="course">
+    <h3 class="prof">Professor Jane Smith</h3>
     <div class="container">
-        <img src="../../public/assets/img/Geomatry.jpg" width=400vw alt="Picture of a Professor" />
+        <img class="pics" src="/assets/img/Geomatry.jpg" width=400vw alt="Picture of a Professor" />
         <p>Assignments Due Today</p>
         <ol>
             <li>Geo 101 Lecture Reading</li>

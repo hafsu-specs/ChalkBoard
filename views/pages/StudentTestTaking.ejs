@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Test Results</title>
+    <meta charset="UTF-8">
+    <title>Student Test</title>
+
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../Style.css">
+    <link href="/Style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-default navbar-expand-lg navbar-light">
         <div class="navbar-header">
-            <a class="navbar-brand" href="../../views/pages/StudentCoursesHomePage.ejs">All Courses</a>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="../../views/pages/StudentCoursesHomePage.ejs">Course Home Page</a></li>
-                        <li> <a href="StudentProfile.html">Profile</a></li>
-                        <li><a href="StudentTestTaking.html">Take Test</a></li>
-                        <li><a href="StudentTestDraft.html">Drafts</a></li>
-                        <li><a href="StudentTestResults.html">Test Results</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <a class="navbar-brand" href="/StudentHome">Chalk<b>Board</b></a>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/StudentHome">Course Home Page</a></li>
+                <li> <a href="/StudentProfile">Profile</a> &nbsp;</li>
+                <li><a href="/StudentTestTaking">Take Test</a></li>
+                <li><a href="/StudentTestDraft">Drafts</a></li>
+                <li><a href="/StudentTestResults">Test Results</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
 <main>
@@ -33,18 +33,18 @@
     <p> Read Chapter One “Circles” in the Geometry
         textbook and answer the following questions: </p>
     <section class="questions">
-        <h3>Results</h3>
+        <h3>Test</h3>
         <p>Question 1<p>
-        <p contenteditable="true">How do you find the circumference of a circle?</p>
-        <form action="/action_page.php">
-            <p><label for="q1">Type Answer below:</label></p>
+        <p>How do you find the circumference of a circle?</p>
+       <form action="/action_page.php">
+           <p><label for="q1">Type Answer below:</label></p>
             <textarea id="q1" name="details" rows="5" cols="40" required></textarea>
-            <p><label for="file1">Select a file:</label></p>
+           <p><label for="file1">Select a file:</label></p>
             <input type="file" id="file1" name="file1"><br><br>
         </form>
 
         <p>Question 2<p>
-        <p contenteditable="true">How do you find the circumference of a circle?</p>
+        <p>How do you find the circumference of a circle?</p>
         <form action="/action_page.php">
             <p><label for="q2">Type Answer below:</label></p>
             <textarea id="q2" name="details" rows="5" cols="40" required></textarea>
@@ -53,7 +53,7 @@
         </form>
 
         <p>Question 3<p>
-        <p contenteditable="true">How do you find the circumference of a circle?</p>
+        <p>How do you find the circumference of a circle?</p>
         <form action="/action_page.php">
             <p><label for="q3">Type Answer below:</label></p>
             <textarea id="q3" name="details" rows="5" cols="40" required></textarea>
@@ -62,7 +62,7 @@
         </form>
 
         <p>Question 4<p>
-        <p contenteditable="true">How do you find the circumference of a circle?</p>
+        <p>How do you find the circumference of a circle?</p>
         <form action="/action_page.php">
             <p><label for="q4">Type Answer below:</label></p>
             <textarea id="q4" name="details" rows="5" cols="40" required></textarea>
@@ -71,7 +71,7 @@
         </form>
 
         <p>Question 5<p>
-        <p contenteditable="true">How do you find the circumference of a circle?</p>
+        <p>How do you find the circumference of a circle?</p>
         <form action="/action_page.php">
             <p><label for="q5">Type Answer below:</label></p>
             <textarea id="q5" name="details" rows="5" cols="40" required></textarea>
@@ -81,7 +81,7 @@
 
         <input type="submit">
         <input type="submit" name="save" value="Save as Draft">
-    </section>
+        </section>
 </main>
 <footer>
     <p>

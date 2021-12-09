@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Student Enrollment</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="/Style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/StudentCoursesHomePage">My Courses</a>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/StudentProfile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-8">
+            <div class="search"> <i class="fa fa-search"></i>
+                <input id="search-input" type="text" class="form-control" placeholder="Search Courses to enroll">
+                <button id="search-button" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/Search.js"></script>
+<div class="flex-container">
+    <div class="course1">
+        <h2>Geometry</h2>
+        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
+                data-placement="bottom" data-content="Enrolled">
+            Enroll
+        </button>
+        <h3>Professor Jane Smith</h3>
+        <img src="../../assets/img/Geomatry.jpg" width=100px alt="Picture of a Professor" />
+
+    </div>
+    <div class="course2">
+        <h2>Geology</h2>
+        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
+                data-placement="bottom" data-content="Enrolled">
+            Enroll
+        </button>
+        <h3>Professor Janet Smithson</h3>
+        <img src="../../assets/img/Geology.jpg" width=100px alt="Picture of a Professor" />
+
+    </div>
+
+    <div class="course3">
+        <h2>Geography</h2>
+        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
+                data-placement="bottom" data-content="Enrolled">
+            Enroll
+        </button>
+        <h3>Professor Minni Max</h3>
+        <img src="../../assets/img/Geography.jpg" width=100px alt="Picture of a Professor" />
+
+    </div>
+</div>
+</body>
+
+</html>

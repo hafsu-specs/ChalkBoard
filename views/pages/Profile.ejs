@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- <meta charset="UTF-8">
      <title>Student Courses Home Page</title>
      <link rel="stylesheet" href="../Style.css">-->
-  
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Geography</title>
@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/Style.css">
-  </head>
+    <link href="/Style.css" rel="stylesheet" type="text/css">
+</head>
 <body>
-    <header>
-      <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+<header>
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">Chalk<b>Board</b></a>
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -28,32 +28,33 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-    <!-- Collection of nav links, forms, and other content for toggling -->
-    <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
-        <ul class="nav navbar-nav">
-            <li><a href="/InstructorHome">All Courses</a></li>
-            <li><a href="/pages/CreateCourse.html">Create course</a></li>
-            <li><a href="/pages/DropCourse.html">Drop course</a></li>
-            <li><a href="/InstructorProfile">Profile</a></li>
-            <li><a href="/">Logout</a></li>
-        </ul>
-    </div>
-  </nav>
-      </header>
-      <div class="main">
-        <div class="container">
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
+            <ul class="nav navbar-nav">
+                <li><a href="/StudentHome">My Courses</a></li>
+                <li><a href="/StudentTestTaking">My Tests</a></li>
+                <li><a href="/StudentProfile">Profile</a></li>
+                <form action="/studentlogout" method="POST"> <!-- this page tests the login and then leads to index.ejs page-->
+                    <input type="submit" class="btn btn-block" value="Logout">
+                </form>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="main">
+    <div class="container">
         <h2 class="form-title">Profile</h2>
         <div class="form-group">
-        <input type="text" class="form-input" name="name" id="name" value=<%= username %>>
+            <input type="text" class="form-input" name="name" id="name" value=<%= username %>>
         </div>
         <div class="form-group">
-        <input type="email" class="form-input" name="email" id="email" value="Rupakshiaggarwal1999@gmail.com">
+            <input type="email" class="form-input" name="email" id="email" value="test@email.com">
         </div>
         <div class="form-group">
-        <input type="text" class="form-input" name="password" id="password" value="******">
-        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+            <input type="text" class="form-input" name="password" id="password" value="******">
+            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
         </div>
-        </div>
-        </div>
+    </div>
+</div>
 </body>
 </html>

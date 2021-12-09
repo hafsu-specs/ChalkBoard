@@ -45,7 +45,6 @@
         <div id="navbarCollapse" class="collapse navbar-collapse nav navbar-nav" a href="/">
             <ul class="nav navbar-nav">
                 <li><a href="/StudentHome">My Courses</a></li>
-                <li><a href="pages/StudentTestTaking.html">My Tests</a></li>
                 <li><a href="/StudentProfile">Profile</a></li>
                 <form action="studentlogout" method="POST"> <!-- this page tests the login and then leads to index.ejs page-->
                     <input type="submit" class="btn btn-block" value="Logout">
@@ -54,12 +53,25 @@
         </div>
     </nav>
     </header>
+    <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center">
+            <div class="col-md-8">
+                <div class="search"> <i class="fa fa-search"></i>
+                    <input id="search-input" type="text" class="form-control" placeholder="Search Courses to enroll">
+                   <form action="/StudentEnrollment" method ="GET">
+                       <button id="search-button" class="btn btn-primary"
+                               onClick="location.href='/StudentEnrollment'">Search</button>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <h1>Home</h1>
     <div class="flex-container">
         <div class="course1">
             <a href="/GeometryCourse"><h2>Geometry</h2></a>
             <h3>Professor Jane Smith</h3>
-            <img src="/assets/img/Geomatry.jpg" width= 100 alt="Picture of a Professor">
+            <img src="/assets/img/Geomatry.jpg" width= 150px alt="Picture of a Professor">
             <p>Assignments Due Today</p>
             <ol>
                 <li>Math 101 Lecture Reading</li>
@@ -75,7 +87,7 @@
         <div class="course2">
             <a href="/GeologyCourse"><h2>Geology</h2></a>
             <h3> Professor Janet Smithson</h3>
-            <img src="/assets/img/Geology.jpg" width= 100 alt="Picture of a Professor">
+            <img src="/assets/img/Geology.jpg" width= 150px alt="Picture of a Professor">
             <p>Assignments Due Today</p>
             <ol>
                 <li>Geology Lab</li>
@@ -91,7 +103,7 @@
         <div class="course3">
             <a href="/GeographyCourse"><h2>Geography</h2></a>
             <h3> Professor Minni Max</h3>
-            <img src="/assets/img/Geography.jpg" width= 100 alt="Picture of a Professor">
+            <img src="/assets/img/Geography.jpg" width= 150px alt="Picture of a Professor">
             <p>Assignments Due Today</p>
             <ol>
                 <li>Geography 101 Lecture Reading</li>
