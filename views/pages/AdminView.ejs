@@ -41,6 +41,7 @@
           <th scope="email">email</th>
           <th scope="FirstName">First Name</th>
           <th scope="LastName">Last Name</th>
+          <th scope="type">User Type</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +52,7 @@
             <td><%=  user["email"] %></td>
             <td><%=  user["FirstName"] %></td>
             <td><%=  user["LastName"] %></td>
+            <td><%= user["type"]%></td>
           </tr>
         <% }); %>
       </tbody>

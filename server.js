@@ -104,7 +104,7 @@ app.post('/StudentSignUp', function(request, response) {
 
 //student Logout
 app.post('/studentlogout', function(request, response) {
-    request.session.studentloggedin = false;
+        request.session.studentloggedin = false;
     response.redirect('/');	
 });
 
@@ -173,7 +173,7 @@ app.get('/StudentProfile', function (request, response) {
     if (request.session.studentloggedin) {
         listnames[i]=(request.session.email + ": opened student profile");
         i++;
-        response.render('pages/Profile', {
+        response.render('/Profile', {
             username: request.session.email
         });
        return;
