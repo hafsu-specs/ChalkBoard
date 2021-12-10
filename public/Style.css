@@ -48,7 +48,7 @@ body {
 
 .signup {
     padding-top: 20vw;
-    padding-left 10vw;
+    padding-left: 10vw;
     align-content: center;
 }
 
@@ -225,7 +225,7 @@ header.masthead {
 .flex-container > div {
     background-color: #f1f1f1;
     border-color: black;
-    margin: 75px;
+    margin: 45px;
     padding: 30px;
 }
 
@@ -317,8 +317,9 @@ header.masthead {
         padding-left: 175px;
     }
       @media (min-width: 400px) {
-          .pics {
+          .pics .course1 .course2 .course3 {
               width: 600px;
               max-width: 700px;
           }
+      }
   }
