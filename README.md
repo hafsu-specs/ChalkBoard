@@ -6,6 +6,26 @@ https://demo-chalkboard.hafsahkamal.repl.co
 ## Team
 Rupakshi Aggarwal, Hafsah Kamal
 
+#### New Updates (Deliverable 3)
+As of December 7 2021, our website is live at https://demo-chalkboard.hafsahkamal.repl.co/.
+Our project now incorporates a server.js file, located in https://github.com/hafsu-specs/ChalkBoard/blob/main/server.js. We now also have new directories set up for different views. The public folder features images and assets, while views/pages contains all the ejs files for this project.
+ ### Contributions:
+  #### Rupakshi: 
+  Connected database to the server (MySQL).  It contains information on User ids, usernames (email), first and last name, account type and passwords. In addition to this, created login,logout, sign up to connect to the connect using post requests and wrote queries to get the data from the frontend and save it in the database. She also added 3 different sessions for Admin, student and Instutude so each type of user can access their respective views by logging in only and each session can be loged out by clicking on logout button. All usernames must be unique usernames.
+  Added bootstrap library to add styling and responsiveness in the frontend, also created multiple HTML pages with a consistent CSS, the searchbar for the instructor and student, navbar for instruor, login, signup, first page of the website, creating nee courses, adding a dropping courses, profile, for both instructor and student and the Admin view, connected pages all pages together (except test taking pages) so they can be accessed correctly, lastly added styling for the pages created by me and ensured that all pages have consistent styling. 
+ #### Hafsah: 
+Hosted the website on replit using github repo, assisted in adding a nodejs server using express, created multiple HTML pages for student and instructor, and added styling for these pages to make sure everything is reponsive. Connected these pages together so all of them can be accessed 
+### User metadata: 
+All of the information featured on the database is available to the Admin (password provided in private comment for Deliverable 3). Please note that the information is visible only after admin has logged in and waits for a few seconds, as it has been programmed to autorefresh after several seconds.
+### User signup/Sign in:
+  Students and Instructors can signup through https://demo-chalkboard.hafsahkamal.repl.co/StudentSignUp and https://demo-chalkboard.hafsahkamal.repl.co/InstructorSignUp respectively. After creating an account, users may login through the login button located in the main page (https://demo-chalkboard.hafsahkamal.repl.co/). 
+ ##### User Session:
+ Users can access their courses only if they are logged in. A student cannot enter an instructor page without proper credentials nor vice versa. Finally, Admin can see all of this information (login attempts and failures) but must also be logged in to see this data. If user credentials are incorrect, do not exist, or are attempted to be used again (i.e. user tries to sign up using the same email but with a different password), users are redirected to the homepage, with Admin View detailing the failure.
+ 
+
+
+
+
 ### Images below were constructed using LucidChart. 
 Contributers: Rupakshi Aggarwal and Hafsah Kamal
 ### Image 1
@@ -57,21 +77,3 @@ As of 11/22/2021, our website contains code which confirms to the guidelines adh
   Our nav bars, which had "#" as filler code previously, are now fully functional in all pages, with care taken to make sure pages the instructor may see, the students cannot access. In addition to this, we had images which had not matched the subject being taught; this has now been resolved. New html pages have been added to reflect the courses being taught (for now). RWD has also been reflected in our inclusion of the Bootstrap framework.
  These changes cannot be seen in the main branch just yet, but can be looked at via https://github.com/Rupakshi1999/cs355-agru2717.github.io/tree/Hafsah_CB/ChalkBoard.
   
-#### New Updates (Deliverable 3)
-As of December 7 2021, our website is live at https://demo-chalkboard.hafsahkamal.repl.co/.
-Our project now incorporates a server.js file, located in https://github.com/hafsu-specs/ChalkBoard/blob/main/server.js. We now also have new directories set up for different views. The public folder features images and assets, while views/pages contains all the ejs files for this project.
- ### Contributions:
-  #### Rupakshi: 
-  Connected database to the server (MySQL).  It contains information on User ids, usernames (email), first and last name, account type and passwords. In addition to this, created login,logout, sign up to connect to the connect using post requests and wrote queries to get the data from the frontend and save it in the database. She also added 3 different sessions for Admin, student and Instutude so each type of user can access their respective views by logging in only and each session can be loged out by clicking on logout button. All usernames must be unique usernames.
-  Added bootstrap library to add styling and responsiveness in the frontend, also created multiple HTML pages with a consistent CSS, the searchbar for the instructor and student, navbar for instruor, login, signup, first page of the website, creating nee courses, adding a dropping courses, profile, for both instructor and student and the Admin view, connected pages all pages together (except test taking pages) so they can be accessed correctly, lastly added styling for the pages created by me and ensured that all pages have consistent styling. 
- #### Hafsah: 
-Hosted the website on replit using github repo, assisted in adding a nodejs server using express, created multiple HTML pages for student and instructor, and added styling for these pages to make sure everything is reponsive. Connected these pages together so all of them can be accessed 
-##### User metadata: 
-All of the information featured on the database is available to the Admin (password provided in private comment for Deliverable 3). Please note that the information is visible only after admin has logged in and waits for a few seconds, as it has been programmed to autorefresh after several seconds.
-##### User signup/Sign in:
-  Students and Instructors can signup through https://demo-chalkboard.hafsahkamal.repl.co/StudentSignUp and https://demo-chalkboard.hafsahkamal.repl.co/InstructorSignUp respectively. After creating an account, users may login through the login button located in the main page (https://demo-chalkboard.hafsahkamal.repl.co/). 
- ##### User Session:
- Users can access their courses only if they are logged in. A student cannot enter an instructor page without proper credentials nor vice versa. Finally, Admin can see all of this information (login attempts and failures) but must also be logged in to see this data. If user credentials are incorrect, do not exist, or are attempted to be used again (i.e. user tries to sign up using the same email but with a different password), users are redirected to the homepage, with Admin View detailing the failure.
- 
-
-
