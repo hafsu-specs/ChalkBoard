@@ -80,7 +80,6 @@ app.post('/auth', function(request, response) {
 		response.end();
 	}
 });
-
 //student Sign up only
 app.post('/StudentSignUp', function(request, response) {
 	var username = request.body.email;
@@ -97,7 +96,7 @@ app.post('/StudentSignUp', function(request, response) {
 			response.end();
 		});
 	} else {
-		response.send('User: '+username+" already exists: please login insted");
+		response.send('User: '+username+" already exists: please login instead");
 		response.redirect('/');
 	}
 });
@@ -169,11 +168,11 @@ app.get('/temp', function (req, res) {
 });
 
 //only students can access this view
-app.get('/StudentProfile', function (request, response) {
+app.get('/Profile', function (request, response) {
     if (request.session.studentloggedin) {
         listnames[i]=(request.session.email + ": opened student profile");
         i++;
-        response.render('/Profile', {
+        response.render('pages/Profile', {
             username: request.session.email
         });
        return;
@@ -445,8 +444,6 @@ app.get('/StudentTestDraft', function(request, response) {
     }
     response.end();
 });
-
-
 
 //TODO: think how to fix - everytime a new activity happens we have to reload the admin page
 //which means that the admin logged in will appear every time we reload the admin page
