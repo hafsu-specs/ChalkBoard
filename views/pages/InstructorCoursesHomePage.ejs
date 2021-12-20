@@ -35,6 +35,7 @@
             <li><a href="/CreateCourse">Create course</a></li>
             <li><a href="/DropCourse">Drop course</a></li>
             <li><a href="/InstructorProfile">Profile</a></li>
+            <li><a href="/studentRoster">Student Roster</a></li>
             <form action="instructorlogout" method="POST"> <!-- this page tests the login and then leads to index.ejs page-->
                 <input type="submit" class="btn btn-block" value="Logout">
             </form>
@@ -48,12 +49,12 @@
             <div class="search"> <i class="fa fa-search"></i>
                 <input id="search-input" type="text" class="form-control" placeholder="Search">
                 <button id="search-button" class="btn btn-primary"
-                        onClick="location.href='InstructorSearch.html'">Search</button>
+                        onClick="location.href='/SearchResults'">Search</button>
             </div>
         </div>
     </div>
 </div>
-<script src="../../js/Search.js"></script>
+<script src="/Search.js"></script>
 <h1>Home</h1>
     <div class="flex-container">
         <div class="course1">

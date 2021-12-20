@@ -281,6 +281,32 @@ app.get('/InstructorProfile', function (request, response) {
    }
    response.end();
 });
+app.get('/studentRoster', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor is viewing Roster");
+        i++;
+        response.render('pages/studentRoster');
+        return;
+    } else {
+        listnames[i]=("instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
+app.get('/SearchResults', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor is viewing Search results");
+        i++;
+        response.render('pages/InstructorSearch');
+        return;
+    } else {
+        listnames[i]=("instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
 //only Instructors should have access to the following pages
 app.get('/InstructorGeography', function(request, response) {
     if (request.session.instructorloggedin) {
@@ -308,19 +334,7 @@ app.get('/InstructorGeology', function(request, response) {
     }
     response.end();
 });
-app.get('/InstructorGeometry', function(request, response) {
-    if (request.session.instructorloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geometry Course");
-        i++;
-        response.render('pages/InstructorGeometry');
-        return;
-    } else {
-        listnames[i]=("Instructor access denied: please login");
-        i++;
-        response.redirect('/');
-    }
-    response.end();
-});
+
 app.get('/InstructorGeometry', function(request, response) {
     if (request.session.instructorloggedin) {
         listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geometry Course");
