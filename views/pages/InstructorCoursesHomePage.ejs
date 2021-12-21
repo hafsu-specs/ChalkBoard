@@ -57,53 +57,26 @@
 <script src="/Search.js"></script>
 <h1>Home</h1>
     <div class="flex-container">
-        <div class="course1">
-            <a href="/InstructorGeometry"><h2>Geometry</h2></a>
-            <h3>Professor Jane Smith</h3>
-            <img src="/assets/img/Geomatry.jpg" width= 100 alt="Picture of a Professor">
-            <p>Assignments Due Today</p>
-            <ol>
-                <li>Math 101 Lecture Reading</li>
-                <li>Math 101 Lecture Reading</li>
-                <li>Geometry Quiz</li>
-            </ol>
-            <p>Assignments Due Soon</p>
-            <ol>
-                <li>Math 102 Lecture Reading</li>
-                <li>Geometry Exam</li>
-            </ol>
-        </div>
-        <div class="course2">
-            <a href="/InstructorGeology"><h2>Geology</h2></a>
-            <h3> Professor Janet Smithson</h3>
-            <img src="/assets/img/Geology.jpg" width= 100 alt="Picture of a Professor">
-            <p>Assignments Due Today</p>
-            <ol>
-                <li>Geology Lab</li>
-                <li>Geology Lesson</li>
-            </ol>
-            <p>Assignments Due Soon</p>
-            <ol>
-                <li>Geology Quiz</li>
-                <li>Geology Essay</li>
-            </ol>
-        </div>
-
-        <div class="course3">
-            <a href="/InstructorGeography"><h2>Geography</h2></a>
-            <h3> Professor Minni Max</h3>
-            <img src="/assets/img/Geography.jpg" width= 100 alt="Picture of a Professor">
-            <p>Assignments Due Today</p>
-            <ol>
-                <li>Geography 101 Lecture Reading</li>
-                <li>Geography Quiz</li>
-            </ol>
-            <p>Assignments Due Soon</p>
-            <ol>
-                <li>Geography 102 Lecture Reading</li>
-                <li>Geography Exam</li>
-            </ol>
-        </div>
+       
+        <% instructorcourses.forEach(function(course) { %>
+            <div class="course1">
+                <h3><a href = "/InstructorGeography"><%=  course["coursename"] %></a></h3>
+                <img src="/assets/img/Geomatry.jpg" width= 100 alt="Picture of a Professor">
+                <p><%= course["description"] %></p>
+                <!-- <ol>
+                    <li>Math 101 Lecture Reading</li>
+                    <li>Math 101 Lecture Reading</li>
+                    <li>Geometry Quiz</li>
+                </ol>
+                <p>Assignments Due Soon</p>
+                <ol>
+                    <li>Math 102 Lecture Reading</li>
+                    <li>Geometry Exam</li>
+                </ol> -->
+                
+            </div>
+        <% }); %>
     </div>
+    
 </body>
 </html>
