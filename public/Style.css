@@ -11,6 +11,9 @@ body {
     border-color: #5c6ac4;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
+
+/*for bigger text boxes (creating/grading/taking lessons)*/
+
 .search {
     position: relative;
     box-shadow: 0 0 40px rgba(51, 51, 51, .1)
@@ -342,5 +345,6 @@ header.masthead {
       tr:nth-child(even) {
           background-color: #dddddd;
       }
+      form-group1
 
   }

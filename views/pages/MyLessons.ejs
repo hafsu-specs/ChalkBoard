@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Viewing Lessons</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="/Style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/InstructorHome">All Courses</a>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/InstructorHome">Course Home Page</a></li>
+                <li><a href="/InstructorProfile">Profile</a></li>
+                <li><a href="/InstructorCreatingLesson">Creating Lesson</a></li>
+                <li><a href="/InstructorGradingLesson">Grading Lesson</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<section class = "tests">
+    <main>
+        <form action="InstructorCreatingLesson" method="POST" id="create-lessons-form" class="signup-form">
+            <h2 class="form-title">View Lessons</h2>
+            <div class="form-group">
+                <label>Lesson Title</label>
+                <input type="text" class="form-control" name="lessonTitle" id="lessonTitle" required="required" />
+            </div>
+            <div class="form-group">
+                <label>Directions</label>
+                <input type="text" class="form-control" name="directions" id="directions" required="required" />
+            </div>
+            <div class="form-group">
+                <label>Questions</label>
+                <input type="text" class="form-control" name="question" id="question" required="required" placeholder="textbook"/>
+            </div>
+            <div class="form-group">
+                <label>Answers</label>
+                <input type="text" class="form-control" name="answer" id="answer" required="required" placeholder="textbook"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" id="submit"
+                       class="form-submit btn btn-primary btn-xl text-uppercase" value="Search Archives"/>
+            </div>
+        </form>
+    </main>
+</section>
+<footer>
+    <p>
+        &copy; 2021 Rupakshi and Hafsah's Online Classroom
+    </p>
+</footer>
+</body>
+</html>

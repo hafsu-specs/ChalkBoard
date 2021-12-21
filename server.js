@@ -38,7 +38,9 @@ app.use(bodyParser.json());
 //tracks all activities
 var listnames=[];
 var i=0;
-var metadata = []
+var metadata = [];
+/*var instructorlessons = [];*/
+
 
 //When the client enters their details in the login form and clicks the submit button, the form data will be sent to the server
 // and with that data our login script will check in our MySQL accounts table to see if the details are correct
@@ -137,11 +139,43 @@ app.post('/InstructorSignUp', function(request, response) {
 			response.end();
 		});
 	} else {
-		response.send('User: '+username+" already exists: please login insted");
+		response.send('User: '+username+" already exists: please login instead");
 		response.redirect('/');
 	}
 });
+//TODO: POST request for creating/grading lessons
+app.post('/InstructorCreatingLesson', function(request, response) {
+    var lessonTitle = request.body.lessonTitle;
+    var directions = request.body.directions;
+    var question = request.body.question;
+    var answer = request.body.answer;
+    var instructorid = 3;
 
+    if (lessonTitle && directions && question && answer) {
+        /*connection.query("SELECT id FROM accounts where type = ? AND email = ?",['instructor', request.session.email], function (err, result, fields) {
+            if (err) throw err;
+            Instructorid = result[0].id;
+            Instructorid = parseInt(Instructorid);
+            console.log(parseInt(Instructorid));
+        });*/
+        connection.query('INSERT INTO lessons (lessonTitle, directions, question,  answer) VALUES (?, ?, ?, ?)',
+            [lessonTitle, directions, question,  answer], function(error, results, fields) {
+                console.log(" "+fields);
+
+                listnames[i++]=("Lesson created! "+instructorid);
+                response.redirect('/InstructorHome');
+                response.end();
+            });
+        listnames[i++]="Lesson added by instructor with teacher userID: "+instructorid;
+        listnames[i++] = "lessonTitle: "+lessonTitle;
+        listnames[i++] = "directions: "+directions;
+        listnames[i++] = "question: "+question;
+        listnames[i++] = "answer: "+answer;
+    } else {
+        response.send('User: '+instructorid+ ' failed to create a lesson');
+        response.redirect('/InstructorHome');
+    }
+});
 // *** GET Routes - display pages ***
 
 //landing page
@@ -348,9 +382,22 @@ app.get('/InstructorGeometry', function(request, response) {
     }
     response.end();
 });
+//TODO: page to view all lessons created (READ task)
+app.get('/MyLessons', function(request, response) {
+    if (request.session.instructorloggedin) {
+        listnames[i]=("Username:"+ request.session.email + " | Instructor is now in Lesson View page");
+        i++;
+        response.render('pages/MyLessons');
+        return;
+    } else {
+        listnames[i]=("instructor access denied: please login");
+        i++;
+        response.redirect('/');
+    }
+    response.end();
+});
 
-//the following requests are for htmls that we plan to turn into ejs
-//  this comment will be deleted once task is complete
+
 app.get('/CreateCourse', function(request, response) {
     if (request.session.instructorloggedin) {
         listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Create Course");
@@ -391,12 +438,12 @@ app.get('/StudentEnrollment', function(request, response) {
     }
     response.end();
 });
-//For redirection to creating/grading tests from all geo courses:
-app.get('/InstructorCreatingTest', function(request, response) {
+//For redirection to creating/grading lesson from all geo courses:
+app.get('/InstructorCreatingLesson', function(request, response) {
     if (request.session.instructorloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Test Create Mode");
+        listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Lesson Create Mode");
         i++;
-        response.render("pages/InstructorCreatingTest");
+        response.render("pages/InstructorCreatingLesson");
         return;
     } else {
         listnames[i]=("Instructor access denied: please login");
@@ -405,11 +452,11 @@ app.get('/InstructorCreatingTest', function(request, response) {
     }
     response.end();
 });
-app.get('/InstructorGradingTest', function(request, response) {
+app.get('/InstructorGradingLesson', function(request, response) {
     if (request.session.instructorloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Test Grade Mode");
+        listnames[i]=("Username:"+ request.session.email + " | Instructor Opened Lesson Grade Mode");
         i++;
-        response.render("pages/InstructorGradingTest");
+        response.render("pages/InstructorGradingLesson");
         return;
     } else {
         listnames[i]=("Instructor access denied: please login");
@@ -418,12 +465,12 @@ app.get('/InstructorGradingTest', function(request, response) {
     }
     response.end();
 });
-//Student Test taking, drafts, and results redirection
-app.get('/StudentTestTaking', function(request, response) {
+//Student Lesson, drafts, and results redirection
+app.get('/StudentLesson', function(request, response) {
     if (request.session.studentloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Student Opened Test Taking Page");
+        listnames[i]=("Username:"+ request.session.email + " | Student Opened Lesson Page");
         i++;
-        response.render("pages/StudentTestTaking");
+        response.render("pages/StudentLesson");
         return;
     } else {
         listnames[i]=("Student access denied: please login");
@@ -432,11 +479,11 @@ app.get('/StudentTestTaking', function(request, response) {
     }
     response.end();
 });
-app.get('/StudentTestResults', function(request, response) {
+app.get('/StudentResults', function(request, response) {
     if (request.session.studentloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Student Opened Test Results");
+        listnames[i]=("Username:"+ request.session.email + " | Student Opened Results");
         i++;
-        response.render("pages/StudentTestResults");
+        response.render("pages/StudentResults");
         return;
     } else {
         listnames[i]=("Student access denied: please login");
@@ -445,11 +492,11 @@ app.get('/StudentTestResults', function(request, response) {
     }
     response.end();
 });
-app.get('/StudentTestDraft', function(request, response) {
+app.get('/StudentLesson', function(request, response) {
     if (request.session.studentloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Student Opened Test Draft");
+        listnames[i]=("Username:"+ request.session.email + " | Student Opened Lesson Draft");
         i++;
-        response.render("pages/StudentTestDraft");
+        response.render("pages/StudentLesson");
         return;
     } else {
         listnames[i]=("Student access denied: please login");
