@@ -179,6 +179,9 @@ app.post('/InstructorSignUp', function(request, response) {
 
 // *** GET Routes - display pages ***
 
+//search api
+
+
 //landing page
 app.get('/', function (req, res) {
     res.render('pages/index');
@@ -316,21 +319,6 @@ app.get('/InstructorHome', function(request, response) {
 	response.end();
 });
 
-app.get('/InstructorProfile', function (request, response) {
-    if (request.session.instructorloggedin) {
-        listnames[i]=("Username:"+ request.session.email + "| Instructor profile");
-        i++;
-        response.render('pages/InstructorProfile', {
-            username: request.session.email
-        });
-       return;
-   } else {
-        listnames[i]=("Instructor access denied: please login");
-        i++;
-        response.redirect('/');
-   }
-   response.end();
-});
 app.get('/studentRoster', function(request, response) {
     if (request.session.instructorloggedin) {
         listnames[i]=("Username:"+ request.session.email + " | Instructor is viewing Roster");
