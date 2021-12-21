@@ -38,7 +38,8 @@ app.use(bodyParser.json());
 //tracks all activities
 var listnames=[];
 var i=0;
-var metadata = []
+var metadata = [];
+var instructorcourses = [];
 
 //When the client enters their details in the login form and clicks the submit button, the form data will be sent to the server
 // and with that data our login script will check in our MySQL accounts table to see if the details are correct
@@ -98,6 +99,40 @@ app.post('/StudentSignUp', function(request, response) {
 	} else {
 		response.send('User: '+username+" already exists: please login instead");
 		response.redirect('/');
+	}
+});
+
+//creating courses
+//instructor only
+app.post('/CreateCourse', function(request, response) {
+	var name = request.body.courseName;
+	var description = request.body.description;
+    var materials = request.body.materials;
+	var semester = request.body.semester;
+    var Instructorid = 31;
+
+	if (name && description && materials) {
+        connection.query("SELECT id FROM accounts where type = ? AND email = ?",['instructor', request.session.email], function (err, result, fields) {
+            if (err) throw err;
+            Instructorid = result[0].id;
+            Instructorid = parseInt(Instructorid);
+            console.log(parseInt(Instructorid));
+        });
+		connection.query('INSERT INTO allcourses (instructorid, coursename, description, coursematerials,  semester) VALUES (?, ?, ?, ?, ?)', 
+        [Instructorid, name, description, semester, materials], function(error, results, fields) {
+            console.log(" "+fields);
+			//TODO: handle if the user already exists
+            listnames[i++]=("course created! "+name);
+			response.redirect('/InstructorHome');	
+			response.end();
+		});
+        listnames[i++]="course added by instructor: "+Instructorid;
+        listnames[i++] = "name: "+name;
+        listnames[i++] = "description: "+description;
+        listnames[i++] = "semester: "+semester;
+	} else {
+		response.send('User: '+username+" course not created");
+		response.redirect('/CreateCourses');
 	}
 });
 
@@ -253,12 +288,27 @@ app.get('/GeographyCourse', function(request, response) {
 });
 //only instructors can access this page
 app.get('/InstructorHome', function(request, response) {
-	if (request.session.instructorloggedin) {
-         listnames[i]=("Username:"+ request.session.email + " | Instructor logged in");
+    var instructorid;
+    
+    if (request.session.instructorloggedin) {
+        connection.query("SELECT id FROM accounts where type = ? AND email = ?",['instructor', request.session.email], function (err, result, fields) {
+            if (err) throw err;
+            instructorid = result[0].id;
+            console.log(instructorid);
+            connection.query("SELECT * FROM allcourses where instructorid = ?",[instructorid], function (err, result, fields) {
+                if (err) throw err;
+                instructorcourses = result;
+            });
+        });
+
+        listnames[i]=("Username:"+ request.session.email + " | Instructor logged in");
          i++;
-         response.render('pages/InstructorCoursesHomePage');
-        return;
-	} else {
+        response.render('pages/InstructorCoursesHomePage', {
+           // EJS variable and server-side variable
+           instructorcourses: instructorcourses
+       });
+       return; 
+   } else {
          listnames[i]=("instructor access denied: please login");
          i++;
          response.redirect('/');
@@ -313,33 +363,6 @@ app.get('/InstructorGeography', function(request, response) {
         listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geography Course");
         i++;
         response.render('pages/InstructorGeography');
-        return;
-    } else {
-        listnames[i]=("Instructor access denied: please login");
-        i++;
-        response.redirect('/');
-    }
-    response.end();
-});
-app.get('/InstructorGeology', function(request, response) {
-    if (request.session.instructorloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geology Course");
-        i++;
-        response.render('pages/InstructorGeology');
-        return;
-    } else {
-        listnames[i]=("Instructor access denied: please login");
-        i++;
-        response.redirect('/');
-    }
-    response.end();
-});
-
-app.get('/InstructorGeometry', function(request, response) {
-    if (request.session.instructorloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Instructor opened Geometry Course");
-        i++;
-        response.render('pages/InstructorGeometry');
         return;
     } else {
         listnames[i]=("Instructor access denied: please login");
@@ -418,6 +441,7 @@ app.get('/InstructorGradingTest', function(request, response) {
     }
     response.end();
 });
+
 //Student Test taking, drafts, and results redirection
 app.get('/StudentTestTaking', function(request, response) {
     if (request.session.studentloggedin) {
@@ -432,6 +456,7 @@ app.get('/StudentTestTaking', function(request, response) {
     }
     response.end();
 });
+
 app.get('/StudentTestResults', function(request, response) {
     if (request.session.studentloggedin) {
         listnames[i]=("Username:"+ request.session.email + " | Student Opened Test Results");
@@ -445,6 +470,7 @@ app.get('/StudentTestResults', function(request, response) {
     }
     response.end();
 });
+
 app.get('/StudentTestDraft', function(request, response) {
     if (request.session.studentloggedin) {
         listnames[i]=("Username:"+ request.session.email + " | Student Opened Test Draft");
@@ -480,19 +506,3 @@ app.get('/AdminView', function(request, response) {
 	}
 	response.end();
 });
-
-//logout
-// DELETE /api/auth/logout
-// router.delete('/logout', (req, res) => {
-//     if (req.session) {
-//       req.session.destroy(err => {
-//         if (err) {
-//           res.status(400).send('Unable to log out')
-//         } else {
-//           res.send('Logout successful')
-//         }
-//       });
-//     } else {
-//       res.end()
-//     }
-//   })
