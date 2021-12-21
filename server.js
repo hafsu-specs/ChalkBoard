@@ -109,23 +109,23 @@ app.post('/CreateCourse', function(request, response) {
 	var description = request.body.description;
     var materials = request.body.materials;
 	var semester = request.body.semester;
-    var Instructorid = 31;
+    var Instructorid;
 
 	if (name && description && materials) {
         connection.query("SELECT id FROM accounts where type = ? AND email = ?",['instructor', request.session.email], function (err, result, fields) {
             if (err) throw err;
             Instructorid = result[0].id;
-            Instructorid = parseInt(Instructorid);
-            console.log(parseInt(Instructorid));
-        });
-		connection.query('INSERT INTO allcourses (instructorid, coursename, description, coursematerials,  semester) VALUES (?, ?, ?, ?, ?)', 
-        [Instructorid, name, description, semester, materials], function(error, results, fields) {
+           
+            connection.query('INSERT INTO allcourses (instructorid, coursename, description, coursematerials,  semester) VALUES (?, ?, ?, ?, ?)', 
+            [Instructorid, name, description, semester, materials], function(error, results, fields) {
             console.log(" "+fields);
 			//TODO: handle if the user already exists
             listnames[i++]=("course created! "+name);
 			response.redirect('/InstructorHome');	
 			response.end();
 		});
+        });
+		
         listnames[i++]="course added by instructor: "+Instructorid;
         listnames[i++] = "name: "+name;
         listnames[i++] = "description: "+description;
