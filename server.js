@@ -496,7 +496,7 @@ app.get('/AdminView', function(request, response) {
 });
 
 //TODO: POST request for creating/grading lessons --Hafsah
-app.post('/InstructorCreatingLesson', function(request, response) {
+app.post('/InstructorCreatingTest', function(request, response) {
     var lessonTitle = request.body.lessonTitle;
     var directions = request.body.directions;
     var question = request.body.question;
