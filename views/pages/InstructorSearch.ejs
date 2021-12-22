@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,27 +22,27 @@
 </header>
 <div class="container">
     <div class="row height d-flex justify-content-center align-items-center">
-        <div class="col-md-8">
-            <div class="search"> <i class="fa fa-search"></i>
-                <input id="search-input" type="text" class="form-control" placeholder="Search">
-                <button id="search-button" class="btn btn-primary"
-                        onClick="location.href='/SearchResults'">Search</button>
+        <form>
+            <div class="col-md-8">
+                <div class="search"> <i class="fa fa-search"></i>
+                    <input id="search" name="search" type="text" class="form-control" placeholder="Search">
+                    <button id="search-button" class="btn btn-primary"
+                            onClick="this.form.submit()">Search</button>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
-<script src="../Search.js"></script>
+<script>
+    $( document ).ready(function() {
+        <% for (var i =0; i< searchResults.length; i++) { %>
+            document.getElementById('result').innerHTML += '<p> <%= searchResults[i]['coursename'] %></p>'
+            document.getElementById('result').innerHTML += '<p> Description: <%= searchResults[i]['description'] %></p>'
+            <%} %>
+    });
+</script>
 <div class="flex-container">
-    <div class="course1">
-        <h2>Geometry</h2>
-        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
-                data-placement="bottom" data-content="Enrolled">
-            Add/Drop
-        </button>
-        <h3>Professor Jane Smith</h3>
-        <img src="../../assets/img/Geomatry.jpg" width=100px alt="Picture of a Professor" />
-
-    </div>
+    <div id="result"></div>
     <div class="course2">
         <h2>Geology</h2>
         <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
@@ -53,18 +53,7 @@
         <img src="../../assets/img/Geology.jpg" width=100px alt="Picture of a Professor" />
 
     </div>
-
-    <div class="course3">
-        <h2>Geography</h2>
-        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
-                data-placement="bottom" data-content="Enrolled">
-            Add/Drop
-        </button>
-        <h3>Professor Minni Max</h3>
-        <img src="../../assets/img/Geography.jpg" width=100px alt="Picture of a Professor" />
-
-    </div>
 </div>
 </body>
 
-</html>
+</html> -->

@@ -5,6 +5,8 @@ var path = require('path');
 var mysql = require('mysql');
 var session = require('express-session');
 var bodyParser = require("body-parser");
+const { connect } = require('mongoose');
+const res = require('express/lib/response');
 
 // Initialise Express
 var app = express();
@@ -180,8 +182,32 @@ app.post('/InstructorSignUp', function(request, response) {
 // *** GET Routes - display pages ***
 
 //search api
+function search(req,res,next){
+    var searchTerm = req.query.search;
+    
+    let query = "SELECT * FROM allcourses";
+    if(searchTerm != ''){
+        query = 'SELECT * FROM allcourses WHERE coursename LIKE %'+searchTerm+'% OR description LIKE %'+searchTerm+'% group by courseid';
+    }
+    else if (searchTerm ==''){
+        query = 'SELECT * FROM allcourses group by courseid';
+    }
+    connection.query(query, (err, result) => {
+        if(err) {
+            req.searchResult ="";
+            req.searchTerm="";
+            next();
+        }
+        req.searchResult = result;
+        req.searchTerm = searchTerm;
 
-
+        next();
+    });
+    console.log(req.searchResult);
+}
+//Extract the keyword.
+//Return the result depending on the keyword.
+    
 //landing page
 app.get('/', function (req, res) {
     res.render('pages/index');
@@ -332,17 +358,26 @@ app.get('/studentRoster', function(request, response) {
     }
     response.end();
 });
-app.get('/SearchResults', function(request, response) {
+app.get('/SearchResults', search, (request, response) => {
+    //pass the results of query to the renderer
+    var searchResult=request.searchResult;
     if (request.session.instructorloggedin) {
-        listnames[i]=("Username:"+ request.session.email + " | Instructor is viewing Search results");
-        i++;
-        response.render('pages/InstructorSearch');
-        return;
-    } else {
-        listnames[i]=("instructor access denied: please login");
-        i++;
+        listnames[i++]=("Username:"+ request.session.email + " is viewing Search results for "+request.searchTerm);
+        response.render('pages/InstructorSearch', {
+            results:searchResult.length,
+            searchTerm: request.searchTerm,
+            searchResult:searchResult,
+            category:request.category
+        });
+        
+    } else if (request.session.studentloggedin){
+        
+    }
+    else{
+        listnames[i++]=("Please login to search for courses");
         response.redirect('/');
     }
+    console.log(searchResult);
     response.end();
 });
 //only Instructors should have access to the following pages
