@@ -494,3 +494,39 @@ app.get('/AdminView', function(request, response) {
 	}
 	response.end();
 });
+
+//TODO: POST request for creating/grading lessons --Hafsah
+app.post('/InstructorCreatingLesson', function(request, response) {
+    var lessonTitle = request.body.lessonTitle;
+    var directions = request.body.directions;
+    var question = request.body.question;
+    var answer = request.body.answer;
+    var courseID = request.body.courseID;
+    var instructorid = 3;
+
+    if (lessonTitle && directions && question && answer) {
+        /*connection.query("SELECT id FROM accounts where type = ? AND email = ?",['instructor', request.session.email], function (err, result, fields) {
+            if (err) throw err;
+            Instructorid = result[0].id;
+            Instructorid = parseInt(Instructorid);
+            console.log(parseInt(Instructorid));
+        });*/
+        connection.query('INSERT INTO lessons (lessonTitle, directions, question,  answer, courseID) VALUES (?, ?, ?, ?, ?)',
+            [lessonTitle, directions, question,  answer, courseID], function(error, results, fields) {
+                console.log(" "+fields);
+
+                listnames[i++]=("Lesson created! "+instructorid);
+                response.redirect('/InstructorHome');
+                response.end();
+            });
+        listnames[i++]="Lesson added by instructor with teacher userID: "+instructorid;
+        listnames[i++] = "lessonTitle: "+lessonTitle;
+        listnames[i++] = "directions: "+directions;
+        listnames[i++] = "question: "+question;
+        listnames[i++] = "answer: "+answer;
+        listnames[i++] = "courseID: "+courseID;
+        } else {
+        response.send('User: '+instructorid+ ' failed to create a lesson');
+        response.redirect('/InstructorHome');
+    }
+});
